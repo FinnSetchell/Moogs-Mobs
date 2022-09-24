@@ -4,9 +4,9 @@ plugins {
     id 'net.minecraftforge.gradle' version '5.1.+'
 }
 
-version = '1.0'
-group = 'com.yourname.modid' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'modid'
+version = '0.0.1-1.19.2'
+group = 'com.finndog.moogsmobs' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'moogsmobs'
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -49,10 +49,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'examplemod'
+            property 'forge.enabledGameTestNamespaces', 'moogsmobs'
 
             mods {
-                examplemod {
+                moogsmobs {
                     source sourceSets.main
                 }
             }
@@ -65,10 +65,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'examplemod'
+            property 'forge.enabledGameTestNamespaces', 'moogsmobs'
 
             mods {
-                examplemod {
+                moogsmobs {
                     source sourceSets.main
                 }
             }
@@ -84,10 +84,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'examplemod'
+            property 'forge.enabledGameTestNamespaces', 'moogsmobs'
 
             mods {
-                examplemod {
+                moogsmobs {
                     source sourceSets.main
                 }
             }
@@ -101,10 +101,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'moogsmobs', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                examplemod {
+                moogsmobs {
                     source sourceSets.main
                 }
             }
@@ -123,6 +123,7 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+    maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
 }
 
 dependencies {
@@ -142,18 +143,20 @@ dependencies {
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.21')
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "examplemod",
-                "Specification-Vendor"    : "examplemodsareus",
+                "Specification-Title"     : "moogsmobs",
+                "Specification-Vendor"    : "moogsmobssareus",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "examplemodsareus",
+                "Implementation-Vendor"   : "moogsmobssareus",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
@@ -172,10 +175,9 @@ publishing {
         }
     }
     repositories {
-        maven {
-            url "file://${project.projectDir}/mcmodsrepo"
-        }
+        maven { url "file://${project.projectDir}/mcmodsrepo" }
     }
+
 }
 
 tasks.withType(JavaCompile).configureEach {
