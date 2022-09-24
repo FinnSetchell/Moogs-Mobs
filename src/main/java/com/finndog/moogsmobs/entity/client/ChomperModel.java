@@ -13,11 +13,11 @@ public class ChomperModel extends AnimatedGeoModel<ChomperEntity> {
 
     @Override
     public ResourceLocation getTextureResource(ChomperEntity object) {
-        return new ResourceLocation(MoogsMobs.MODID, "textures/entity/chomper/chomper_texture.png");
+        return new ResourceLocation(MoogsMobs.MODID, "textures/entity/chomper.png");
     }
 
     @Override
     public ResourceLocation getAnimationResource(ChomperEntity animatable) {
-        return new ResourceLocation(MoogsMobs.MODID, "animations/chomper/chomper.animation.json");
+        return new ResourceLocation(MoogsMobs.MODID, "animations/chomper.animation.json");
     }
 }

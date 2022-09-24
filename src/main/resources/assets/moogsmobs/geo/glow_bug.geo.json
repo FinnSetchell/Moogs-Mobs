@@ -1,0 +1,104 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.glowbug",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "abdomen",
+					"pivot": [0, 2.2, 0.375],
+					"cubes": [
+						{"origin": [-1, 2.1, -2], "size": [2, 1, 4], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "rightfront",
+					"parent": "abdomen",
+					"pivot": [-1, 3, -1],
+					"cubes": [
+						{"origin": [-3.5, 0, -1], "size": [3, 4, 0], "pivot": [-1, 3, -1], "rotation": [0, -30, 0], "uv": [12, 4]}
+					]
+				},
+				{
+					"name": "rightmid",
+					"parent": "abdomen",
+					"pivot": [-1, 3, 0],
+					"cubes": [
+						{"origin": [-3.5, 0, 0], "size": [3, 4, 0], "uv": [12, 4]}
+					]
+				},
+				{
+					"name": "rightback",
+					"parent": "abdomen",
+					"pivot": [-1, 3, 1],
+					"cubes": [
+						{"origin": [-3.5, 0, 1], "size": [3, 4, 0], "pivot": [-1, 3, 1], "rotation": [0, 30, 0], "uv": [12, 4]}
+					]
+				},
+				{
+					"name": "leftfront",
+					"parent": "abdomen",
+					"pivot": [1, 3, -1],
+					"cubes": [
+						{"origin": [0.5, 0, -1], "size": [3, 4, 0], "pivot": [1, 3, -1], "rotation": [0, 30, 0], "uv": [12, 4], "mirror": true}
+					]
+				},
+				{
+					"name": "leftmid",
+					"parent": "abdomen",
+					"pivot": [1, 3, 0],
+					"cubes": [
+						{"origin": [0.5, 0, 0], "size": [3, 4, 0], "uv": [12, 4], "mirror": true}
+					]
+				},
+				{
+					"name": "leftback",
+					"parent": "abdomen",
+					"pivot": [1, 3, 1],
+					"cubes": [
+						{"origin": [0.5, 0, 1], "size": [3, 4, 0], "pivot": [1, 3, 1], "rotation": [0, -30, 0], "uv": [12, 4], "mirror": true}
+					]
+				},
+				{
+					"name": "ass",
+					"parent": "abdomen",
+					"pivot": [0, 3, 1.5],
+					"cubes": [
+						{"origin": [-1.5, 2, 1.5], "size": [3, 2, 3], "pivot": [0, 1, 3], "rotation": [0, -45, 0], "uv": [0, 5]}
+					]
+				},
+				{
+					"name": "neck",
+					"parent": "abdomen",
+					"pivot": [0, 3, -2],
+					"cubes": [
+						{"origin": [-5, 1.8, -2], "size": [2, 2, 2], "pivot": [0, 1, 3], "rotation": [0, -45, 0], "uv": [8, 0]}
+					]
+				},
+				{
+					"name": "leftantenna",
+					"parent": "neck",
+					"pivot": [0.5, 3.8, -2.7],
+					"cubes": [
+						{"origin": [1, 3, -4], "size": [3, 4, 0], "pivot": [1.66496, 4.75025, -3.26861], "rotation": [45, 30, 45], "uv": [0, 10]}
+					]
+				},
+				{
+					"name": "rightantenna",
+					"parent": "neck",
+					"pivot": [-0.5, 3.8, -2.7],
+					"cubes": [
+						{"origin": [-4, 3, -4], "size": [3, 4, 0], "pivot": [-1.66496, 4.75025, -3.26861], "rotation": [45, -30, -45], "uv": [0, 10], "mirror": true}
+					]
+				}
+			]
+		}
+	]
+}
