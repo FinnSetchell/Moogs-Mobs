@@ -35,7 +35,7 @@ public class GlowBugEntity extends Monster implements IAnimatable {
     public static AttributeSupplier setAttributes() {
         return Monster.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 7.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.5f)
+                .add(Attributes.MOVEMENT_SPEED, 0.4f)
                 .build();
     }
 
@@ -51,11 +51,11 @@ public class GlowBugEntity extends Monster implements IAnimatable {
 
     private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event) {
         if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("glow_bug.animation.walk", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("glowbug.animation.walk", true));
             return PlayState.CONTINUE;
         }
 
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("glow_bug.animation.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("glowbug.animation.idle", true));
         return PlayState.CONTINUE;
     }
 

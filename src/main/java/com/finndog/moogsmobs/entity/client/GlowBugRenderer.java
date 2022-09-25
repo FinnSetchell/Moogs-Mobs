@@ -28,7 +28,7 @@ public class GlowBugRenderer extends GeoEntityRenderer<GlowBugEntity> {
                                     @Nullable MultiBufferSource renderTypeBuffer,
                                     @Nullable VertexConsumer vertexBuilder, int packedLightIn,
                                     ResourceLocation textureLocation) {
-        stack.scale(3f, 3f, 3f);
+        stack.scale(0.8f, 0.8f, 0.8f);
         return super.getRenderType(animatable, partialTicks, stack, renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
     }
 }
