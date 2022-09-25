@@ -14,7 +14,7 @@ public class GlowBugLayer<T extends GlowBugEntity> extends GeoLayerRenderer<T> {
 
     protected static final ResourceLocation GLOWBUG_GLOW = new ResourceLocation(MoogsMobs.MODID, "textures/entity/glowbug_glow.png");
 
-    protected static final ResourceLocation GLOWBUG = new ResourceLocation(MoogsMobs.MODID, "geo/glow_bug.geo.json");
+    protected static final ResourceLocation GLOWBUG = new ResourceLocation(MoogsMobs.MODID, "geo/glowbug.geo.json");
 
     public GlowBugLayer(IGeoRenderer<T> entityRendererIn) {
         super(entityRendererIn);

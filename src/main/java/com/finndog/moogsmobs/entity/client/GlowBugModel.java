@@ -8,16 +8,16 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 public class GlowBugModel extends AnimatedGeoModel<GlowBugEntity> {
     @Override
     public ResourceLocation getModelResource(GlowBugEntity object) {
-        return new ResourceLocation(MoogsMobs.MODID, "geo/glow_bug.geo.json");
+        return new ResourceLocation(MoogsMobs.MODID, "geo/glowbug.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(GlowBugEntity object) {
-        return new ResourceLocation(MoogsMobs.MODID, "textures/entity/glow_bug.png");
+        return new ResourceLocation(MoogsMobs.MODID, "textures/entity/glowbug.png");
     }
 
     @Override
     public ResourceLocation getAnimationResource(GlowBugEntity animatable) {
-        return new ResourceLocation(MoogsMobs.MODID, "animations/glow_bug.animation.json");
+        return new ResourceLocation(MoogsMobs.MODID, "animations/glowbug.animation.json");
     }
 }

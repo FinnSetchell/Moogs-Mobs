@@ -20,7 +20,7 @@ public class GlowBugRenderer extends GeoEntityRenderer<GlowBugEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(GlowBugEntity instance) {
-        return new ResourceLocation(MoogsMobs.MODID, "textures/entity/glow_bug.png");
+        return new ResourceLocation(MoogsMobs.MODID, "textures/entity/glowbug.png");
     }
 
     @Override

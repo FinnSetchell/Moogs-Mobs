@@ -21,10 +21,10 @@ public class ModEntityTypes {
                             .sized(0.4f, 1.5f)
                             .build(new ResourceLocation(MoogsMobs.MODID, "chomper") .toString()));
     public static final RegistryObject<EntityType<GlowBugEntity>> GLOWBUG =
-            ENTITY_TYPES. register("glow_bug",
+            ENTITY_TYPES. register("glowbug",
                     ( ) -> EntityType.Builder.of(GlowBugEntity:: new, MobCategory.AMBIENT)
                             .sized(0.4f, 0.2f)
-                            .build(new ResourceLocation(MoogsMobs.MODID, "glow_bug") .toString()));
+                            .build(new ResourceLocation(MoogsMobs.MODID, "glowbug") .toString()));
 
 
     public static void register(IEventBus eventBus) {

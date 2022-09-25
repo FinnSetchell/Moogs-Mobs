@@ -51,11 +51,11 @@ public class GlowBugEntity extends Monster implements IAnimatable {
 
     private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event) {
         if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("glowbug.animation.walk", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.glowbug.walk", true));
             return PlayState.CONTINUE;
         }
 
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("glowbug.animation.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.glowbug.idle", true));
         return PlayState.CONTINUE;
     }
 

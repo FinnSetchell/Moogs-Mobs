@@ -17,7 +17,7 @@ public class ModItems {
     public static final RegistryObject<Item> CHOMPER_SPAWN_EGG = ITEMS.register("chomper_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.CHOMPER, 0x22b341, 0x19732e,
                     new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-    public static final RegistryObject<Item> GLOW_BUG_SPAWN_EGG = ITEMS.register("glow_bug_spawn_egg",
+    public static final RegistryObject<Item> GLOWBUG_SPAWN_EGG = ITEMS.register("glowbug_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.GLOWBUG, 0x72f3a4, 0xabcdef,
                     new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
