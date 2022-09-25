@@ -1,5 +1,6 @@
 package com.finndog.moogsmobs;
 
+import com.finndog.moogsmobs.block.ModBlocks;
 import com.finndog.moogsmobs.entity.ModEntityTypes;
 import com.finndog.moogsmobs.entity.client.ChomperRenderer;
 import com.finndog.moogsmobs.entity.client.GlowBugRenderer;
@@ -31,6 +32,8 @@ public class MoogsMobs
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+
+        ModBlocks.register(modEventBus);
 
         ModEntityTypes.register(modEventBus);
 

@@ -35,16 +35,16 @@ public class GlowBugEntity extends Monster implements IAnimatable {
     public static AttributeSupplier setAttributes() {
         return Monster.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 7.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.4f)
+                .add(Attributes.MOVEMENT_SPEED, 0.2f)
                 .build();
     }
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new FloatGoal(this));
-        this.goalSelector.addGoal(3, new FleeSunGoal(this, 2.2D));
+        this.goalSelector.addGoal(3, new FleeSunGoal(this, 1.2D));
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.0D));
-        this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, Player.class, 8.0F, 2.2D, 2.2D));
+        this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, Player.class, 8.0F, 1.2D, 1.2D));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(6, new RandomStrollGoal(this, 1f, 10));
     }
@@ -63,7 +63,7 @@ public class GlowBugEntity extends Monster implements IAnimatable {
     @Override
     public void registerControllers(AnimationData data) {
         data.addAnimationController(new AnimationController(this, "controller",
-                0, this::predicate));
+                1, this::predicate));
     }
 
     @Override
