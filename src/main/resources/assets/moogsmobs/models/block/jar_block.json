@@ -1,6 +1,6 @@
 {
   "credit": "Made with Blockbench",
-  "parent": "jar",
+  "parent": "block",
   "texture_size": [32, 32],
   "textures": {
     "0": "jar_side",
