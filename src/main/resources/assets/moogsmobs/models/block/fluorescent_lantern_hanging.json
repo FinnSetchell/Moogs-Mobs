@@ -1,6 +1,5 @@
 {
   "credit": "Made with Blockbench",
-  "parent": "block",
   "textures": {
     "0": "moogsmods:block/fluorescent_lantern",
     "particle": "moogsmods:block/fluorescent_lantern"
