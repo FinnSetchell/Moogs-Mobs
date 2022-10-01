@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "moogsmods:block/fluorescent_lantern.png",
-		"particle": "moogsmods:block/fluorescent_lantern.png"
+		"0": "moogsmods:block/fluorescent_lantern",
+		"particle": "moogsmods:block/fluorescent_lantern"
 	},
 	"elements": [
 		{
