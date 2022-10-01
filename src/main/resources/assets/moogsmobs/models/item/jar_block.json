@@ -3,10 +3,10 @@
   "parent": "block",
   "texture_size": [32, 32],
   "textures": {
-    "0": "moogsmods:item/jar/jar_side",
-    "1": "moogsmods:item/jar/jar_top",
-    "2": "moogsmods:item/jar/jar_bottom",
-    "particle": "moogsmods:item/jar/jar_side"
+    "0": "moogsmobs:item/jar/jar_side",
+    "1": "moogsmobs:item/jar/jar_top",
+    "2": "moogsmobs:item/jar/jar_bottom",
+    "particle": "moogsmobs:item/jar/jar_side"
   },
   "elements": [
     {
