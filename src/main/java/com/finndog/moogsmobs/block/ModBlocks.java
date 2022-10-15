@@ -1,13 +1,14 @@
 package com.finndog.moogsmobs.block;
 
 import com.finndog.moogsmobs.MoogsMobs;
+import com.finndog.moogsmobs.block.custom.AnimatedGlowBugJarBlock;
+import com.finndog.moogsmobs.block.custom.JarBlock;
 import com.finndog.moogsmobs.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LanternBlock;
-import net.minecraft.world.level.block.SkullBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -22,9 +23,16 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, MoogsMobs.MODID);
 
-    public static RegistryObject<Block> JAR_BLOCK = registerBlock("jar_block",
-            () -> new Block(BlockBehaviour.Properties
+//    public static RegistryObject<Block> JAR_BLOCK = registerBlock("jar_block",
+//            () -> new Block(BlockBehaviour.Properties
+//                    .of(Material.GLASS)
+//                    .sound(SoundType.GLASS)),
+//            CreativeModeTab.TAB_DECORATIONS);
+
+    public static RegistryObject<Block> JAR = registerBlock("jar_block",
+            () -> new JarBlock(BlockBehaviour.Properties
                     .of(Material.GLASS)
+                    .strength(0.5f, 1f)
                     .sound(SoundType.GLASS)),
             CreativeModeTab.TAB_DECORATIONS);
 
@@ -43,6 +51,13 @@ public class ModBlocks {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, tab);
         return toReturn;
+    }
+
+    public static final RegistryObject<Block> ANIMATED_JAR_BLOCK = registerBlockWithoutBlockItem("animated_glowbug_jar_block",
+            () -> new AnimatedGlowBugJarBlock(BlockBehaviour.Properties.of(Material.GLASS).noOcclusion()));
+
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
     }
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {

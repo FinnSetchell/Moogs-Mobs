@@ -3,18 +3,22 @@ package com.finndog.moogsmobs.entity.custom;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -73,6 +77,20 @@ public class GlowBugEntity extends Monster implements IAnimatable {
 
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
         this.playSound(SoundEvents.SILVERFISH_STEP, 0.15f, 1.0f);
+    }
+
+    public static boolean checkGlowbugSpawnRules(EntityType<GlowBugEntity> entityType, LevelAccessor level, MobSpawnType type, BlockPos pos, RandomSource random) {
+        if (pos.getY() >= 50) {
+            return false;
+        } else {
+            int i = level.getMaxLocalRawBrightness(pos);
+            int j = 4;
+            if (random.nextBoolean()) {
+                return false;
+            }
+
+            return i <= random.nextInt(j) && checkMobSpawnRules(entityType, level, type, pos, random);
+        }
     }
 
     protected SoundEvent getAmbientSound() { return SoundEvents.SILVERFISH_AMBIENT; }

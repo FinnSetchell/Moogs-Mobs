@@ -1,6 +1,11 @@
 {
-  "item.moogsmobs.chomper_spawn_egg": "Chomper Spawn Egg",
   "item.moogsmobs.glowbug_spawn_egg": "Glow Bug Spawn Egg",
+  "item.moogsmobs.bioluminescence": "Bioluminescence",
 
-  "block.moogsmods.fluorescent_lantern": "Fluorescent Lantern"
+  "block.moogsmobs.jar_block": "Glass Jar",
+  "item.moogsmobs.animated_glowbug_jar_item": "Glow Bug Terrarium",
+  "block.moogsmobs.animated_glowbug_jar_block": "Glow Bug Terrarium",
+  "item.moogsmobs.animated_glowbug_jar_block": "Glow Bug Terrarium",
+
+  "block.moogsmobs.fluorescent_lantern": "Fluorescent Lantern"
 }
