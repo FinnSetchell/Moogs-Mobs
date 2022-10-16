@@ -4,11 +4,13 @@ import com.finndog.moogsmobs.block.ModBlocks;
 import com.finndog.moogsmobs.block.entity.BlockEntities;
 import com.finndog.moogsmobs.entity.ModEntityTypes;
 import com.finndog.moogsmobs.entity.client.GlowBugRenderer;
+import com.finndog.moogsmobs.entity.custom.CaplingEntity;
 import com.finndog.moogsmobs.entity.custom.GlowBugEntity;
 import com.finndog.moogsmobs.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -54,6 +56,10 @@ public class MoogsMobs
             SpawnPlacements.register(ModEntityTypes.GLOWBUG.get(),
                     SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     GlowBugEntity::checkGlowbugSpawnRules);
+
+            SpawnPlacements.register(ModEntityTypes.CAPLING.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    CaplingEntity::checkCaplingSpawnRules);
         });
     }
 

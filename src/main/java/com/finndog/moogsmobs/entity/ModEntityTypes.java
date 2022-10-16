@@ -1,6 +1,7 @@
 package com.finndog.moogsmobs.entity;
 
 import com.finndog.moogsmobs.MoogsMobs;
+import com.finndog.moogsmobs.entity.custom.CaplingEntity;
 import com.finndog.moogsmobs.entity.custom.GlowBugEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -19,6 +20,12 @@ public class ModEntityTypes {
                     ( ) -> EntityType.Builder.of(GlowBugEntity:: new, MobCategory.AMBIENT)
                             .sized(0.4f, 0.2f)
                             .build(new ResourceLocation(MoogsMobs.MODID, "glowbug") .toString()));
+
+    public static final RegistryObject<EntityType<CaplingEntity>> CAPLING =
+            ENTITY_TYPES.register("capling",
+                    () -> EntityType.Builder.of(CaplingEntity::new, MobCategory.CREATURE)
+                            .sized(0.8f, 0.6f)
+                            .build(new ResourceLocation(MoogsMobs.MODID, "capling").toString()));
 
 
     public static void register(IEventBus eventBus) {
