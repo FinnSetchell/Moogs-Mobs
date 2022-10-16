@@ -1,11 +1,15 @@
 {
+  //eggs
   "item.moogsmobs.glowbug_spawn_egg": "Glow Bug Spawn Egg",
+  "item.moogsmods.capling_Spawn_egg": "Capling Spawn Egg",
+
+  //items
   "item.moogsmobs.bioluminescence": "Bioluminescence",
 
+  //blocks
   "block.moogsmobs.jar_block": "Glass Jar",
   "item.moogsmobs.animated_glowbug_jar_item": "Glow Bug Terrarium",
   "block.moogsmobs.animated_glowbug_jar_block": "Glow Bug Terrarium",
   "item.moogsmobs.animated_glowbug_jar_block": "Glow Bug Terrarium",
-
   "block.moogsmobs.fluorescent_lantern": "Fluorescent Lantern"
 }
