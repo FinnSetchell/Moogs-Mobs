@@ -2,6 +2,7 @@ package com.finndog.moogsmobs.event;
 
 import com.finndog.moogsmobs.MoogsMobs;
 import com.finndog.moogsmobs.entity.ModEntityTypes;
+import com.finndog.moogsmobs.entity.custom.CaplingEntity;
 import com.finndog.moogsmobs.entity.custom.GlowBugEntity;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,6 +19,8 @@ public class ModEvents {
         @SubscribeEvent
         public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
             event.put(ModEntityTypes.GLOWBUG.get(), GlowBugEntity.setAttributes());
+            event.put(ModEntityTypes.CAPLING.get(), CaplingEntity.setAttributes());
+
         }
     }
 }
