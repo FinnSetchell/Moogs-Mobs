@@ -3,7 +3,7 @@
   "biomes": "minecraft:dark_forest",
   "spawners": {
     "type": "moogsmobs:capling",
-    "weight": 40,
+    "weight": 60,
     "minCount": 1,
     "maxCount": 1
   }
