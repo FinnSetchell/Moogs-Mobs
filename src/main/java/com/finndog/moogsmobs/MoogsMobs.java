@@ -3,6 +3,7 @@ package com.finndog.moogsmobs;
 import com.finndog.moogsmobs.block.ModBlocks;
 import com.finndog.moogsmobs.block.entity.BlockEntities;
 import com.finndog.moogsmobs.entity.ModEntityTypes;
+import com.finndog.moogsmobs.entity.client.CaplingRenderer;
 import com.finndog.moogsmobs.entity.client.GlowBugRenderer;
 import com.finndog.moogsmobs.entity.custom.CaplingEntity;
 import com.finndog.moogsmobs.entity.custom.GlowBugEntity;
@@ -70,6 +71,7 @@ public class MoogsMobs
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntityTypes.GLOWBUG.get(), GlowBugRenderer::new);
+            EntityRenderers.register(ModEntityTypes.CAPLING.get(), CaplingRenderer::new);
         }
     }
 }
