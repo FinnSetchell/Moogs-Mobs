@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.capling.walk": {
+		"animation.Capling.walk": {
 			"loop": true,
 			"animation_length": 0.5,
 			"bones": {
@@ -79,7 +79,7 @@
 				}
 			}
 		},
-		"animation.capling.idle": {
+		"animation.Capling.idle": {
 			"loop": true,
 			"animation_length": 1,
 			"bones": {
@@ -97,10 +97,18 @@
 					"position": {
 						"vector": [0, 2, 0]
 					}
+				},
+				"eyelid": {
+					"rotation": {
+						"vector": [-1, 0, 0]
+					},
+					"position": {
+						"vector": [0, 0, 0.25]
+					}
 				}
 			}
 		},
-		"animation.capling.aggro": {
+		"animation.Capling.aggro": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 1,
 			"bones": {
@@ -175,12 +183,30 @@
 							"vector": [0, 0, 0]
 						}
 					}
+				},
+				"eyelid": {
+					"rotation": {
+						"0.0": {
+							"vector": [-1, 0, 0]
+						},
+						"0.0833": {
+							"vector": [0, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0.25]
+						},
+						"0.0833": {
+							"vector": [0, 0, 0]
+						}
+					}
 				}
 			}
 		},
-		"animation.capling.deaggro": {
+		"animation.Capling.deaggro": {
 			"loop": "hold_on_last_frame",
-			"animation_length": 1,
+			"animation_length": 0.54167,
 			"bones": {
 				"stem": {
 					"position": {
@@ -226,10 +252,30 @@
 							"easing": "easeInExpo"
 						}
 					}
+				},
+				"eyelid": {
+					"rotation": {
+						"vector": [-1, 0, 0],
+						"easing": "step",
+						"easingArgs": [2]
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 0, 0]
+						},
+						"0.5417": {
+							"vector": [0, 0, 0.25],
+							"easing": "step",
+							"easingArgs": [2]
+						}
+					}
 				}
 			}
 		},
-		"animation.capling.explode": {
+		"animation.Capling.explode": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 2.5,
 			"bones": {

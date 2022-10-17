@@ -25,6 +25,10 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntityTypes.CAPLING, 0xc7c1b4, 0x977251,
                     new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
+    public static final RegistryObject<Item> DEATH_CAPLING_SPAWN_EGG = ITEMS.register("death_capling_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.DEATH_CAPLING, 0x444341, 0x1a1a1a,
+                    new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
     public static final RegistryObject<Item> BIOLUMINESCENCE = ITEMS.register("bioluminescence",
             () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
@@ -34,6 +38,9 @@ public class ModItems {
     public static final RegistryObject<Item> ANIMATED_JAR_BLOCK_ITEM = ITEMS.register("animated_glowbug_jar_block",
             () -> new AnimatedJarBlockItem(ModBlocks.ANIMATED_JAR_BLOCK.get(),
                     new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+
+    public static final RegistryObject<Item> SHROUDBREAKER_MANUAL = ITEMS.register("shroudbreaker_manual",
+            () -> new Item(new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
 
 
     public static void register(IEventBus eventBus) {
