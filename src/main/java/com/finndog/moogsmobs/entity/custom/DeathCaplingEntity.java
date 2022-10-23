@@ -1,6 +1,7 @@
 package com.finndog.moogsmobs.entity.custom;
 
 import com.finndog.moogsmobs.entity.goals.CaplingExplodeGoal;
+import com.finndog.moogsmobs.entity.goals.DeathCaplingExplodeGoal;
 import com.finndog.moogsmobs.entity.variant.CaplingVariant;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -10,7 +11,6 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
@@ -18,7 +18,9 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.goat.Goat;
@@ -42,10 +44,9 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 import java.util.Collection;
 
-public class CaplingEntity extends Monster implements IAnimatable {
+public class DeathCaplingEntity extends Monster implements IAnimatable {
     private AnimationFactory factory = new AnimationFactory(this);
 
-    private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(CaplingEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> DATA_SWELL_DIR = SynchedEntityData.defineId(Creeper.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Boolean> DATA_IS_POWERED = SynchedEntityData.defineId(Creeper.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> DATA_IS_IGNITED = SynchedEntityData.defineId(Creeper.class, EntityDataSerializers.BOOLEAN);
@@ -55,7 +56,7 @@ public class CaplingEntity extends Monster implements IAnimatable {
     private int explosionRadius = 3;
     private boolean isExploding = false;
 
-    public CaplingEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
+    public DeathCaplingEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
@@ -69,7 +70,7 @@ public class CaplingEntity extends Monster implements IAnimatable {
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new FloatGoal(this));
-        this.goalSelector.addGoal(2, new CaplingExplodeGoal(this));
+        this.goalSelector.addGoal(2, new DeathCaplingExplodeGoal(this));
         this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, false));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
@@ -108,7 +109,7 @@ public class CaplingEntity extends Monster implements IAnimatable {
         this.playSound(SoundEvents.SHROOMLIGHT_STEP, 0.15f, 1.0f);
     }
 
-    public static boolean checkCaplingSpawnRules(EntityType<CaplingEntity> entityType, LevelAccessor level, MobSpawnType type, BlockPos pos, RandomSource random) {
+    public static boolean checkDeathCaplingSpawnRules(EntityType<DeathCaplingEntity> entityType, LevelAccessor level, MobSpawnType type, BlockPos pos, RandomSource random) {
         return checkMobSpawnRules(entityType, level, type, pos, random);
     }
 
@@ -120,7 +121,6 @@ public class CaplingEntity extends Monster implements IAnimatable {
     @Override
     public void readAdditionalSaveData(CompoundTag tag) {
         super.readAdditionalSaveData(tag);
-        this.entityData.set(DATA_ID_TYPE_VARIANT, tag.getInt("Variant"));
 
         this.entityData.set(DATA_IS_POWERED, tag.getBoolean("powered"));
         if (tag.contains("Fuse", 99)) {
@@ -139,7 +139,6 @@ public class CaplingEntity extends Monster implements IAnimatable {
     @Override
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
-        tag.putInt("Variant", this.getTypeVariant());
 
         if (this.entityData.get(DATA_IS_POWERED)) {
             tag.putBoolean("powered", true);
@@ -153,7 +152,6 @@ public class CaplingEntity extends Monster implements IAnimatable {
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
         this.entityData.define(DATA_SWELL_DIR, -1);
         this.entityData.define(DATA_IS_POWERED, false);
         this.entityData.define(DATA_IS_IGNITED, false);
@@ -180,7 +178,7 @@ public class CaplingEntity extends Monster implements IAnimatable {
 
             if (this.swell >= this.maxSwell) {
                 this.swell = this.maxSwell;
-                this.explodeCapling();
+                this.explodeDeathCapling();
             }
         }
 
@@ -213,7 +211,7 @@ public class CaplingEntity extends Monster implements IAnimatable {
 
 
     /* EXPLODE */
-    private void explodeCapling() {
+    private void explodeDeathCapling() {
         isExploding = false;
         if (!this.level.isClientSide) {
             Explosion.BlockInteraction explosion$blockinteraction = net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.level, this) ? Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.NONE;
@@ -249,27 +247,5 @@ public class CaplingEntity extends Monster implements IAnimatable {
 
     public void ignite() {
         this.entityData.set(DATA_IS_IGNITED, true);
-    }
-
-
-    /* VARIANTS */
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_,
-                                        MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
-                                        @Nullable CompoundTag p_146750_) {
-        CaplingVariant variant = Util.getRandom(CaplingVariant.values(), this.random);
-        setVariant(variant);
-        return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
-    }
-
-    public CaplingVariant getVariant() {
-        return CaplingVariant.byId(this.getTypeVariant() & 255);
-    }
-
-    private int getTypeVariant() {
-        return this.entityData.get(DATA_ID_TYPE_VARIANT);
-    }
-
-    private void setVariant(CaplingVariant variant) {
-        this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
     }
 }
