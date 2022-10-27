@@ -2,6 +2,7 @@ package com.finndog.moogsmobs.entity;
 
 import com.finndog.moogsmobs.MoogsMobs;
 import com.finndog.moogsmobs.entity.custom.CaplingEntity;
+import com.finndog.moogsmobs.entity.custom.DeathCapEntity;
 import com.finndog.moogsmobs.entity.custom.DeathCaplingEntity;
 import com.finndog.moogsmobs.entity.custom.GlowBugEntity;
 import net.minecraft.resources.ResourceLocation;
@@ -33,6 +34,12 @@ public class ModEntityTypes {
                     () -> EntityType.Builder.of(DeathCaplingEntity::new, MobCategory.CREATURE)
                             .sized(0.8f, 0.6f)
                             .build(new ResourceLocation(MoogsMobs.MODID, "death_capling").toString()));
+
+    public static final RegistryObject<EntityType<DeathCapEntity>> DEATH_CAP =
+            ENTITY_TYPES.register("death_cap",
+                    () -> EntityType.Builder.of(DeathCapEntity::new, MobCategory.CREATURE)
+                            .sized(0.8f, 0.6f)
+                            .build(new ResourceLocation(MoogsMobs.MODID, "death_cap").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
