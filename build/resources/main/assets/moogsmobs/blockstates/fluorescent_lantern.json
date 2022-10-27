@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "moogsmobs:block/fluorescent_lantern"
+    },
+    "hanging=true": {
+      "model": "moogsmobs:block/fluorescent_lantern_hanging"
+    }
+  }
+}
