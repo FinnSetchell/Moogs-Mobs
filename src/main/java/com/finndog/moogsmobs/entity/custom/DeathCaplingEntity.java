@@ -79,15 +79,15 @@ public class DeathCaplingEntity extends Monster implements IAnimatable {
 
     private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event) {
         if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.capling.walk", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.death_cap.walk", true));
             return PlayState.CONTINUE;
         }
         if (isExploding) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.capling.explode", false));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.death_cap.explode", false));
             return PlayState.CONTINUE;
         }
 
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.capling.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.death_cap.idle", true));
         return PlayState.CONTINUE;
 
         //TO ADD:
