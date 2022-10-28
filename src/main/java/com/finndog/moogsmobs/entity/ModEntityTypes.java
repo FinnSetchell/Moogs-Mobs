@@ -31,14 +31,14 @@ public class ModEntityTypes {
 
     public static final RegistryObject<EntityType<DeathCaplingEntity>> DEATH_CAPLING =
             ENTITY_TYPES.register("death_capling",
-                    () -> EntityType.Builder.of(DeathCaplingEntity::new, MobCategory.CREATURE)
+                    () -> EntityType.Builder.of(DeathCaplingEntity::new, MobCategory.MONSTER)
                             .sized(0.8f, 0.6f)
                             .build(new ResourceLocation(MoogsMobs.MODID, "death_capling").toString()));
 
     public static final RegistryObject<EntityType<DeathCapEntity>> DEATH_CAP =
             ENTITY_TYPES.register("death_cap",
-                    () -> EntityType.Builder.of(DeathCapEntity::new, MobCategory.CREATURE)
-                            .sized(0.8f, 0.6f)
+                    () -> EntityType.Builder.of(DeathCapEntity::new, MobCategory.MONSTER)
+                            .sized(2.1f, 3f)
                             .build(new ResourceLocation(MoogsMobs.MODID, "death_cap").toString()));
 
     public static void register(IEventBus eventBus) {
