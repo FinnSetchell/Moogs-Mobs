@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.Capling.walk": {
+		"animation.capling.walk": {
 			"loop": true,
 			"animation_length": 0.5,
 			"bones": {
@@ -79,7 +79,7 @@
 				}
 			}
 		},
-		"animation.Capling.idle": {
+		"animation.capling.idle": {
 			"loop": true,
 			"animation_length": 1,
 			"bones": {
@@ -108,7 +108,7 @@
 				}
 			}
 		},
-		"animation.Capling.aggro": {
+		"animation.capling.aggro": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 1,
 			"bones": {
@@ -204,7 +204,7 @@
 				}
 			}
 		},
-		"animation.Capling.deaggro": {
+		"animation.capling.deaggro": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 0.54167,
 			"bones": {
@@ -275,7 +275,7 @@
 				}
 			}
 		},
-		"animation.Capling.explode": {
+		"animation.capling.explode": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 2.5,
 			"bones": {
