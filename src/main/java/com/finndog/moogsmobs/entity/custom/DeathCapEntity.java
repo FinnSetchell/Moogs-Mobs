@@ -4,6 +4,9 @@ import com.finndog.moogsmobs.entity.ModEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -19,6 +22,7 @@ import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.goat.Goat;
+import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
@@ -42,9 +46,10 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import java.util.Collection;
 
 public class DeathCapEntity extends Monster implements IAnimatable {
-    public boolean hibernating;
+    private static final EntityDataAccessor<Boolean> DATA_IS_ATTACKING = SynchedEntityData.defineId(DeathCapEntity.class, EntityDataSerializers.BOOLEAN);
+//    private static final EntityDataAccessor<Integer> DATA_MOVING_TIME = SynchedEntityData.defineId(DeathCapEntity.class, EntityDataSerializers.INT);
+    boolean moving;
     private AnimationFactory factory = new AnimationFactory(this);
-
     public DeathCapEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -53,14 +58,13 @@ public class DeathCapEntity extends Monster implements IAnimatable {
         return Monster.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 80.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.2f)
-                .add(Attributes.ARMOR, 12f)
-                .add(Attributes.ATTACK_DAMAGE, 10f)
-                .add(Attributes.ATTACK_KNOCKBACK, 3f)
+                .add(Attributes.ARMOR, 13f)
+                .add(Attributes.ATTACK_DAMAGE, 12f)
+                .add(Attributes.ATTACK_KNOCKBACK, 1f)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 7f)
-                .add(Attributes.ATTACK_SPEED, 1f)
+                .add(Attributes.ATTACK_SPEED, 50f)
                 .build();
     }
-
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new FloatGoal(this));
@@ -70,26 +74,26 @@ public class DeathCapEntity extends Monster implements IAnimatable {
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, true));
     }
 
+    /**ANIMATIONS*/
     private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event) {
         if (event.isMoving()) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.death_cap.walk", true));
+            this.moving = true;
             return PlayState.CONTINUE;
         }
 
         event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.death_cap.idlesleep", true));
+        this.moving = false;
         return PlayState.CONTINUE;
     }
-
     private PlayState attackPredicate(AnimationEvent event) {
         if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
             event.getController().markNeedsReload();
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.death_cap.bite", false));
             this.swinging = false;
         }
-
         return PlayState.CONTINUE;
     }
-
     @Override
     public void registerControllers(AnimationData data) {
         data.addAnimationController(new AnimationController(this, "controller",
@@ -97,75 +101,68 @@ public class DeathCapEntity extends Monster implements IAnimatable {
         data.addAnimationController(new AnimationController(this, "attackController",
                 0, this::attackPredicate));
     }
-
     @Override
-    public AnimationFactory getFactory() {
-        return factory;
-    }
+    public AnimationFactory getFactory() {return factory;}
 
-    protected void playStepSound(BlockPos pos, BlockState blockIn) {
-        this.playSound(SoundEvents.STEM_STEP, 0.15f, 1.0f);
-    }
-
+    /**SPAWNING*/
     public static boolean checkDeathCapSpawnRules(EntityType<DeathCapEntity> entityType, LevelAccessor level, MobSpawnType type, BlockPos pos, RandomSource random) {
         return checkMobSpawnRules(entityType, level, type, pos, random);
     }
 
+    /**SOUND EVENTS*/
+    protected void playStepSound(BlockPos pos, BlockState blockIn) {this.playSound(SoundEvents.STEM_STEP, 0.15f, 1.0f);}
     protected SoundEvent getAmbientSound() { return SoundEvents.TROPICAL_FISH_AMBIENT; }
     protected SoundEvent getHurtSound(DamageSource damageSourceIn) { return SoundEvents.COD_HURT;}
     protected SoundEvent getDeathSound() {return SoundEvents.DOLPHIN_DEATH;}
     protected float getSoundVolume() {return 0.1f;}
 
+
+    /**DATA*/
     @Override
     public void readAdditionalSaveData(CompoundTag tag) {
         super.readAdditionalSaveData(tag);
+        this.entityData.set(DATA_IS_ATTACKING, tag.getBoolean("attacking"));
     }
-
     @Override
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
+        if (this.entityData.get(DATA_IS_ATTACKING)) {
+            tag.putBoolean("attacking", true);
+        }
     }
-
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
+        this.entityData.define(DATA_IS_ATTACKING, false);
     }
 
+    /**METHODS*/
     public void tick() {
-        double chance = Math.random() * 100;
         if (this.isAlive()) {
-            if (hibernating) {
-                //heal when hibernating
-                if (chance >= 0.08) {
-                    setHealth(getHealth() + 1);
-                }
-            }
+            double chance = Math.random() * 100;
 
-            if (!hibernating) {
-                if (chance < 0.45) {
-                    if (!this.level.isClientSide) {
-                        spawnMinions(((ServerLevel) level), blockPosition(), 10, 5, 6);
-                    }
+            //heal when hibernating
+            if (chance >= 10) {
+                setHealth(getHealth() + 1);
+            }
+            if (chance < 0.45) {
+                if (!this.level.isClientSide) {
+                    spawnMinions(((ServerLevel) level), blockPosition(), 10, 5, 6);
                 }
             }
         }
 
         super.tick();
     }
-
     public void spawnMinions(ServerLevel serverLevel, BlockPos pos, int a, int b, int c) {
-        SpawnUtil.trySpawnMob(EntityType.CHICKEN, MobSpawnType.REINFORCEMENT, serverLevel, pos, a, b, c, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
+        SpawnUtil.trySpawnMob(ModEntityTypes.DEATH_CAPLING, MobSpawnType.REINFORCEMENT, serverLevel, pos, a, b, c, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
     }
 
 
-    public void setTarget(@javax.annotation.Nullable LivingEntity entity) {
-        if (!(entity instanceof Goat)) {
-            super.setTarget(entity);
-        }
-    }
 
-    public boolean doHurtTarget(Entity entity) {
-        return true;
-    }
+    /**SETTERS*/
+
+
+    /**GETTERS*/
 
 }
