@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
 import java.util.UUID;
 
 public class ModEntityTypes {
-    private final EntityType.EntityFactory<EntityType> factory;
+//    private final EntityType.EntityFactory<EntityType> factory;
 
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MoogsMobs.MODID);
@@ -69,65 +69,65 @@ public class ModEntityTypes {
         ENTITY_TYPES.register(eventBus);
     }
 
-    @Nullable
-    public Entity create(ServerLevel serverLevel, @Nullable CompoundTag p_20657_, @Nullable Component p_20658_, @Nullable Player p_20659_, BlockPos p_20660_, MobSpawnType p_20661_, boolean p_20662_, boolean p_20663_) {
-        Entity t = this.create(serverLevel);
-        if (t == null) {
-            return (Entity)null;
-        } else {
-            double d0;
-            if (p_20662_) {
-                t.setPos((double)p_20660_.getX() + 0.5D, (double)(p_20660_.getY() + 1), (double)p_20660_.getZ() + 0.5D);
-                d0 = getYOffset(serverLevel, p_20660_, p_20663_, t.getBoundingBox());
-            } else {
-                d0 = 0.0D;
-            }
+//    @Nullable
+//    public Entity create(ServerLevel serverLevel, @Nullable CompoundTag p_20657_, @Nullable Component p_20658_, @Nullable Player p_20659_, BlockPos p_20660_, MobSpawnType p_20661_, boolean p_20662_, boolean p_20663_) {
+//        Entity t = this.create(serverLevel);
+//        if (t == null) {
+//            return (Entity)null;
+//        } else {
+//            double d0;
+//            if (p_20662_) {
+//                t.setPos((double)p_20660_.getX() + 0.5D, (double)(p_20660_.getY() + 1), (double)p_20660_.getZ() + 0.5D);
+//                d0 = getYOffset(serverLevel, p_20660_, p_20663_, t.getBoundingBox());
+//            } else {
+//                d0 = 0.0D;
+//            }
+//
+//            t.moveTo((double)p_20660_.getX() + 0.5D, (double)p_20660_.getY() + d0, (double)p_20660_.getZ() + 0.5D, Mth.wrapDegrees(serverLevel.random.nextFloat() * 360.0F), 0.0F);
+//            if (t instanceof Mob) {
+//                Mob mob = (Mob)t;
+//                mob.yHeadRot = mob.getYRot();
+//                mob.yBodyRot = mob.getYRot();
+//                mob.finalizeSpawn(serverLevel, serverLevel.getCurrentDifficultyAt(mob.blockPosition()), p_20661_, (SpawnGroupData)null, p_20657_);
+//                mob.playAmbientSound();
+//            }
+//
+//            if (p_20658_ != null && t instanceof LivingEntity) {
+//                t.setCustomName(p_20658_);
+//            }
+//
+//            updateCustomEntityTag(serverLevel, p_20659_, t, p_20657_);
+//            return t;
+//        }
+//    }
 
-            t.moveTo((double)p_20660_.getX() + 0.5D, (double)p_20660_.getY() + d0, (double)p_20660_.getZ() + 0.5D, Mth.wrapDegrees(serverLevel.random.nextFloat() * 360.0F), 0.0F);
-            if (t instanceof Mob) {
-                Mob mob = (Mob)t;
-                mob.yHeadRot = mob.getYRot();
-                mob.yBodyRot = mob.getYRot();
-                mob.finalizeSpawn(serverLevel, serverLevel.getCurrentDifficultyAt(mob.blockPosition()), p_20661_, (SpawnGroupData)null, p_20657_);
-                mob.playAmbientSound();
-            }
+//    @Nullable
+//    public Entity create(Level p_20616_) {
+//        return this.factory.create(this, p_20616_);
+//    }
+//
+//    protected static double getYOffset(LevelReader p_20626_, BlockPos p_20627_, boolean p_20628_, AABB p_20629_) {
+//        AABB aabb = new AABB(p_20627_);
+//        if (p_20628_) {
+//            aabb = aabb.expandTowards(0.0D, -1.0D, 0.0D);
+//        }
+//
+//        Iterable<VoxelShape> iterable = p_20626_.getCollisions((Entity)null, aabb);
+//        return 1.0D + Shapes.collide(Direction.Axis.Y, p_20629_, iterable, p_20628_ ? -2.0D : -1.0D);
+//    }
 
-            if (p_20658_ != null && t instanceof LivingEntity) {
-                t.setCustomName(p_20658_);
-            }
-
-            updateCustomEntityTag(serverLevel, p_20659_, t, p_20657_);
-            return t;
-        }
-    }
-
-    @Nullable
-    public Entity create(Level p_20616_) {
-        return this.factory.create(this, p_20616_);
-    }
-
-    protected static double getYOffset(LevelReader p_20626_, BlockPos p_20627_, boolean p_20628_, AABB p_20629_) {
-        AABB aabb = new AABB(p_20627_);
-        if (p_20628_) {
-            aabb = aabb.expandTowards(0.0D, -1.0D, 0.0D);
-        }
-
-        Iterable<VoxelShape> iterable = p_20626_.getCollisions((Entity)null, aabb);
-        return 1.0D + Shapes.collide(Direction.Axis.Y, p_20629_, iterable, p_20628_ ? -2.0D : -1.0D);
-    }
-
-    public static void updateCustomEntityTag(Level p_20621_, @Nullable Player p_20622_, @Nullable Entity p_20623_, @Nullable CompoundTag p_20624_) {
-        if (p_20624_ != null && p_20624_.contains("EntityTag", 10)) {
-            MinecraftServer minecraftserver = p_20621_.getServer();
-            if (minecraftserver != null && p_20623_ != null) {
-                if (p_20621_.isClientSide || !p_20623_.onlyOpCanSetNbt() || p_20622_ != null && minecraftserver.getPlayerList().isOp(p_20622_.getGameProfile())) {
-                    CompoundTag compoundtag = p_20623_.saveWithoutId(new CompoundTag());
-                    UUID uuid = p_20623_.getUUID();
-                    compoundtag.merge(p_20624_.getCompound("EntityTag"));
-                    p_20623_.setUUID(uuid);
-                    p_20623_.load(compoundtag);
-                }
-            }
-        }
-    }
+//    public static void updateCustomEntityTag(Level p_20621_, @Nullable Player p_20622_, @Nullable Entity p_20623_, @Nullable CompoundTag p_20624_) {
+//        if (p_20624_ != null && p_20624_.contains("EntityTag", 10)) {
+//            MinecraftServer minecraftserver = p_20621_.getServer();
+//            if (minecraftserver != null && p_20623_ != null) {
+//                if (p_20621_.isClientSide || !p_20623_.onlyOpCanSetNbt() || p_20622_ != null && minecraftserver.getPlayerList().isOp(p_20622_.getGameProfile())) {
+//                    CompoundTag compoundtag = p_20623_.saveWithoutId(new CompoundTag());
+//                    UUID uuid = p_20623_.getUUID();
+//                    compoundtag.merge(p_20624_.getCompound("EntityTag"));
+//                    p_20623_.setUUID(uuid);
+//                    p_20623_.load(compoundtag);
+//                }
+//            }
+//        }
+//    }
 }

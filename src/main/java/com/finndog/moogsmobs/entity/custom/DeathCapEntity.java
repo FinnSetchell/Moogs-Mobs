@@ -155,7 +155,7 @@ public class DeathCapEntity extends Monster implements IAnimatable {
         super.tick();
     }
     public void spawnMinions(ServerLevel serverLevel, BlockPos pos, int a, int b, int c) {
-        SpawnUtil.trySpawnMob(ModEntityTypes.DEATH_CAPLING, MobSpawnType.REINFORCEMENT, serverLevel, pos, a, b, c, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
+        SpawnUtil.trySpawnMob(EntityType.CREEPER, MobSpawnType.REINFORCEMENT, serverLevel, pos, a, b, c, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
     }
 
 

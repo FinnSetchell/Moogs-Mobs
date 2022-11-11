@@ -16,7 +16,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import java.util.Optional;
 
 public class EntityUtils {
-    public static <T extends Mob> Optional<T> trySpawnModdedMob(ModEntityTypes entityTypes, MobSpawnType mobSpawnType, ServerLevel level, BlockPos pos, int p_216408_, int p_216409_, int p_216410_, SpawnUtil.Strategy strategy) {
+    /*public static <T extends Mob> Optional<T> trySpawnModdedMob(ModEntityTypes entityTypes, MobSpawnType mobSpawnType, ServerLevel level, BlockPos pos, int p_216408_, int p_216409_, int p_216410_, SpawnUtil.Strategy strategy) {
         BlockPos.MutableBlockPos blockpos$mutableblockpos = pos.mutable();
 
         for(int i = 0; i < p_216408_; ++i) {
@@ -67,5 +67,5 @@ public class EntityUtils {
         };
 
         boolean canSpawnOn(ServerLevel p_216428_, BlockPos p_216429_, BlockState p_216430_, BlockPos p_216431_, BlockState p_216432_);
-    }
+    }*/
 }
