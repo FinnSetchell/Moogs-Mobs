@@ -31,6 +31,10 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntityTypes.DEATH_CAPLING, 0x444341, 0x1a1a1a,
                     new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
+    public static final RegistryObject<Item> DEATH_CAP_SPAWN_EGG = ITEMS.register("death_cap_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.DEATH_CAP, 0x477371, 0x1a1a1a,
+                    new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
     public static final RegistryObject<Item> BIOLUMINESCENCE = ITEMS.register("bioluminescence",
             () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
