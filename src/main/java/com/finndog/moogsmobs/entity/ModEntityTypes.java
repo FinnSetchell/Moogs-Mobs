@@ -2,6 +2,7 @@ package com.finndog.moogsmobs.entity;
 
 import com.finndog.moogsmobs.MoogsMobs;
 import com.finndog.moogsmobs.entity.custom.CaplingEntity;
+import com.finndog.moogsmobs.entity.custom.DwarfMinerEntity;
 import com.finndog.moogsmobs.entity.custom.DeathCapEntity;
 import com.finndog.moogsmobs.entity.custom.DeathCaplingEntity;
 import com.finndog.moogsmobs.entity.custom.GlowBugEntity;
@@ -45,6 +46,12 @@ public class ModEntityTypes {
                     () -> EntityType.Builder.of(CaplingEntity::new, MobCategory.CREATURE)
                             .sized(0.8f, 0.6f)
                             .build(new ResourceLocation(MoogsMobs.MODID, "capling").toString()));
+
+    public static final RegistryObject<EntityType<DwarfMinerEntity>> DWARF_MINER =
+            ENTITY_TYPES.register("dwarf_miner",
+                    () -> EntityType.Builder.of(DwarfMinerEntity::new, MobCategory.CREATURE)
+                            .sized(0.8f, 1.3f)
+                            .build(new ResourceLocation(MoogsMobs.MODID, "dwarf_miner").toString()));
 
     public static final RegistryObject<EntityType<DeathCaplingEntity>> DEATH_CAPLING =
             ENTITY_TYPES.register("death_capling",

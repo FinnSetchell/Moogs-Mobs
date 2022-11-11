@@ -6,6 +6,7 @@ import com.finndog.moogsmobs.entity.ModEntityTypes;
 import com.finndog.moogsmobs.entity.client.CaplingRenderer;
 import com.finndog.moogsmobs.entity.client.DeathCapRenderer;
 import com.finndog.moogsmobs.entity.client.DeathCaplingRenderer;
+import com.finndog.moogsmobs.entity.client.DwarfMinerRenderer;
 import com.finndog.moogsmobs.entity.client.GlowBugRenderer;
 import com.finndog.moogsmobs.entity.custom.CaplingEntity;
 import com.finndog.moogsmobs.entity.custom.DeathCapEntity;
@@ -85,8 +86,8 @@ public class MoogsMobs
             EntityRenderers.register(ModEntityTypes.GLOWBUG.get(), GlowBugRenderer::new);
             EntityRenderers.register(ModEntityTypes.CAPLING.get(), CaplingRenderer::new);
             EntityRenderers.register(ModEntityTypes.DEATH_CAPLING.get(), DeathCaplingRenderer::new);
+            EntityRenderers.register(ModEntityTypes.DWARF_MINER.get(), DwarfMinerRenderer::new);
             EntityRenderers.register(ModEntityTypes.DEATH_CAP.get(), DeathCapRenderer::new);
-
         }
     }
 }

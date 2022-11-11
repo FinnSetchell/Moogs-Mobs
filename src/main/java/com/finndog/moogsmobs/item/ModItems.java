@@ -3,9 +3,11 @@ package com.finndog.moogsmobs.item;
 import com.finndog.moogsmobs.MoogsMobs;
 import com.finndog.moogsmobs.block.ModBlocks;
 import com.finndog.moogsmobs.entity.ModEntityTypes;
+import com.finndog.moogsmobs.item.custom.AleBottleItem;
 import com.finndog.moogsmobs.item.custom.AnimatedJarBlockItem;
 import com.finndog.moogsmobs.item.custom.AnimatedJarItem;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -43,9 +45,11 @@ public class ModItems {
             () -> new AnimatedJarBlockItem(ModBlocks.ANIMATED_JAR_BLOCK.get(),
                     new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
 
+    public static final RegistryObject<Item> ALE_BOTTLE = ITEMS.register("ale_bottle",
+            () -> new AleBottleItem(new Item.Properties().tab(CreativeModeTab.TAB_FOOD)
+                    .food(Foods.HONEY_BOTTLE).stacksTo(1)));
     public static final RegistryObject<Item> SHROUDBREAKER_MANUAL = ITEMS.register("shroudbreaker_manual",
             () -> new Item(new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
-
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
