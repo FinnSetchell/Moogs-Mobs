@@ -3,6 +3,7 @@ package com.finndog.moogsmobs.block.entity;
 import com.finndog.moogsmobs.MoogsMobs;
 import com.finndog.moogsmobs.block.ModBlocks;
 import com.finndog.moogsmobs.block.entity.custom.AnimatedJarBlockEntity;
+import com.finndog.moogsmobs.block.entity.custom.KegBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,6 +18,10 @@ public class BlockEntities {
             BLOCK_ENTITIES.register("animated_glowbug_jar_block", () ->
                     BlockEntityType.Builder.of(AnimatedJarBlockEntity::new,
                             ModBlocks.ANIMATED_JAR_BLOCK.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<KegBlockEntity>> KEG_ENTITY =
+            BLOCK_ENTITIES.register("keg_entity",
+                    () -> BlockEntityType.Builder.of(KegBlockEntity::new, ModBlocks.KEG.get()).build(null));
 
 
     public static void register(IEventBus eventBus) {

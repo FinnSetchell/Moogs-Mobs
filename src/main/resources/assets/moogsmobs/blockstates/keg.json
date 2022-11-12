@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "moogsmobs:block/keg" },
+    "facing=east": { "model": "moogsmobs:block/keg", "y": 90 },
+    "facing=south": { "model": "moogsmobs:block/keg", "y": 180 },
+    "facing=west": { "model": "moogsmobs:block/keg", "y": 270 }
+  }
+}
