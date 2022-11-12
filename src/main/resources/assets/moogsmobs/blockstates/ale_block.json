@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "moogsmobs:block/ale_block" },
+    "facing=east": { "model": "moogsmobs:block/ale_block", "y": 90 },
+    "facing=south": { "model": "moogsmobs:block/ale_block", "y": 180 },
+    "facing=west": { "model": "moogsmobs:block/ale_block", "y": 270 }
+  }
+}

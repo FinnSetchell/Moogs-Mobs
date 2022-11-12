@@ -2,6 +2,7 @@ package com.finndog.moogsmobs;
 
 import com.finndog.moogsmobs.block.ModBlocks;
 import com.finndog.moogsmobs.block.entity.BlockEntities;
+import com.finndog.moogsmobs.effects.ModEffects;
 import com.finndog.moogsmobs.entity.ModEntityTypes;
 import com.finndog.moogsmobs.entity.client.CaplingRenderer;
 import com.finndog.moogsmobs.entity.client.DeathCapRenderer;
@@ -15,6 +16,7 @@ import com.finndog.moogsmobs.entity.custom.GlowBugEntity;
 import com.finndog.moogsmobs.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -28,6 +30,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
 
+
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(MoogsMobs.MODID)
 public class MoogsMobs
@@ -38,19 +41,16 @@ public class MoogsMobs
     public MoogsMobs()
     {
 
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-        ModItems.register(modEventBus);
-
-        ModBlocks.register(modEventBus);
-
-        BlockEntities.register(modEventBus);
-
-        ModEntityTypes.register(modEventBus);
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
+        BlockEntities.register(eventBus);
+        ModEntityTypes.register(eventBus);
+        ModEffects.register(eventBus);
 
         GeckoLib.initialize();
 
-        modEventBus.addListener(this::commonSetup);
+        eventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
