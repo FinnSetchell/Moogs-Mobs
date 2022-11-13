@@ -24,6 +24,7 @@ public class InvisibleMobEffect extends MobEffect {
             if (e instanceof LivingEntity entity) {
                 if (entity.getLastHurtByMob() == pLivingEntity) {
                     entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 40, 10));
+                    entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 5, 1));
                 }
             }
         }

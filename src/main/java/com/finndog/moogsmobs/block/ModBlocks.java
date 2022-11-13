@@ -1,8 +1,6 @@
 package com.finndog.moogsmobs.block;
 
 import com.finndog.moogsmobs.MoogsMobs;
-import com.finndog.moogsmobs.block.custom.AnimatedGlowBugJarBlock;
-import com.finndog.moogsmobs.block.custom.JarBlock;
 import com.finndog.moogsmobs.block.custom.KegBlock;
 import com.finndog.moogsmobs.block.custom.drinks.AleBottleBlock;
 import com.finndog.moogsmobs.block.custom.drinks.BottleBlock;
@@ -30,8 +28,6 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, MoogsMobs.MODID);
 
     // GENERAL NON BLOCKS
-    public static RegistryObject<Block> JAR = registerBlock("jar_block", () -> new JarBlock(BlockBehaviour.Properties.of(Material.GLASS).strength(0.5f, 1f).sound(SoundType.GLASS)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> ANIMATED_JAR_BLOCK = registerBlockWithoutBlockItem("animated_glowbug_jar_block", () -> new AnimatedGlowBugJarBlock(BlockBehaviour.Properties.of(Material.GLASS).noOcclusion()));
     public static RegistryObject<Block> FLUORESCENT_LANTERN = registerBlock("fluorescent_lantern", () -> new LanternBlock(BlockBehaviour.Properties.of(Material.METAL).strength(1.5F).sound(SoundType.LANTERN).lightLevel((p_187433_) -> {return 10;})), CreativeModeTab.TAB_DECORATIONS);
 
     // BOTTLES
@@ -39,7 +35,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> IRON_GROG = registerBlockWithoutBlockItem("iron_grog_block", () -> new IronGrogBlock(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));
     public static final RegistryObject<Block> ALE = registerBlockWithoutBlockItem("ale_block", () -> new AleBottleBlock(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));
     public static final RegistryObject<Block> HONEYBREW = registerBlockWithoutBlockItem("honeybrew_block", () -> new HoneybrewBottleBlock(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));
-
     public static final RegistryObject<Block> KEG = registerBlock("keg", () -> new KegBlock(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()), CreativeModeTab.TAB_FOOD);
 
 

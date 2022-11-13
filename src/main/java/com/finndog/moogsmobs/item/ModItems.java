@@ -4,11 +4,7 @@ import com.finndog.moogsmobs.MoogsMobs;
 import com.finndog.moogsmobs.block.ModBlocks;
 import com.finndog.moogsmobs.entity.ModEntityTypes;
 import com.finndog.moogsmobs.item.custom.AleBottleItem;
-import com.finndog.moogsmobs.item.custom.AnimatedJarBlockItem;
-import com.finndog.moogsmobs.item.custom.AnimatedJarItem;
 import com.finndog.moogsmobs.item.properties.ModFoodProperties;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -29,8 +25,6 @@ public class ModItems {
 
     // ITEMS
     public static final RegistryObject<Item> BIOLUMINESCENCE = ITEMS.register("bioluminescence", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-    public static final RegistryObject<Item> ANIMATED_JAR_ITEM = ITEMS.register("animated_glowbug_jar_item", () -> new AnimatedJarItem(new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
-    public static final RegistryObject<Item> ANIMATED_JAR_BLOCK_ITEM = ITEMS.register("animated_glowbug_jar_block", () -> new AnimatedJarBlockItem(ModBlocks.ANIMATED_JAR_BLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
     public static final RegistryObject<Item> SHROUDBREAKER_MANUAL = ITEMS.register("shroudbreaker_manual", () -> new Item(new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
 
     // DRINKS

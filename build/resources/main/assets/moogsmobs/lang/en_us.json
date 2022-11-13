@@ -4,7 +4,7 @@
   "item.moogsmobs.capling_spawn_egg": "Capling Spawn Egg",
   "item.moogsmobs.death_capling_spawn_egg": "Death Capling Spawn Egg",
   "item.moogsmobs.death_cap_spawn_egg": "Death Cap Spawn Egg",
-  "item.moogsmobd.dwarf_miner_spawn_egg": "Dwarf Miner Spawn Egg",
+  "item.moogsmobs.dwarf_miner_spawn_egg": "Dwarf Miner Spawn Egg",
 
   //items
   "item.moogsmobs.bioluminescence": "Bioluminescence",
@@ -16,7 +16,7 @@
   "item.moogsmobs.iron_grog": "Bottle of Iron Grog",
 
   //blocks
-  "block.moogsmobs.jar_block": "Glass Jar",
+  "block.moogsmobs.jar": "Jar",
   "item.moogsmobs.animated_glowbug_jar_item": "Glow Bug Terrarium",
   "block.moogsmobs.animated_glowbug_jar_block": "Glow Bug Terrarium",
   "item.moogsmobs.animated_glowbug_jar_block": "Glow Bug Terrarium",
@@ -24,9 +24,8 @@
   "block.moogsmobs.keg": "Dwarven Keg",
 
   //effects
-  "effect.moogsmobs.flight": "Flight",
   "effect.moogsmobs.freeze": "Frosty",
-  "effect.moogsmobs.phantom": "Well Rested",
+  "effect.moogsmobs.animal_friend": "Animal Whisperer",
   "effect.moogsmobs.attract": "Attraction",
-  "effect.moogsmobs.wither": "Wither Touch"
+  "effect.moogsmobs.invisible_mob_effect": "Punch of Invisibility"
 }

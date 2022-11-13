@@ -10,7 +10,7 @@ public class ModFoodProperties {
             .nutrition(5)
             .saturationMod(0.6f)
             .alwaysEat()
-            .effect(() -> new MobEffectInstance(ModEffects.INVISIBLE_MOB_EFFECT.get(), 260,1), 1.0f)
+            .effect(() -> new MobEffectInstance(ModEffects.INVISIBLE_MOB_EFFECT.get(), 260,0), 1.0f)
             .effect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 1), 1.0F)
             .effect(new MobEffectInstance(MobEffects.CONFUSION, 200, 1), 1.0F)
             .build();
@@ -19,10 +19,10 @@ public class ModFoodProperties {
             .nutrition(5)
             .saturationMod(0.6f)
             .alwaysEat()
-            .effect(() -> new MobEffectInstance(ModEffects.FREEZE.get(), 260,1), 1.0f)
+            .effect(() -> new MobEffectInstance(ModEffects.FREEZE.get(), 260,0), 1.0f)
             .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 500, 2), 1f)
             .effect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 500, 2), 1f)
-            .effect(new MobEffectInstance(MobEffects.BLINDNESS, 180, 1), 1.0F)
+            .effect(new MobEffectInstance(MobEffects.BLINDNESS, 180, 0), 1.0F)
             .effect(new MobEffectInstance(MobEffects.CONFUSION, 200, 1), 0.7F)
             .build();
 
@@ -30,10 +30,10 @@ public class ModFoodProperties {
             .nutrition(5)
             .saturationMod(0.6f)
             .alwaysEat()
-            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 3000,3), 1f)
-            .effect(new MobEffectInstance(ModEffects.ATTRACT.get(), 3000, 3), 1f)
-            .effect(new MobEffectInstance(ModEffects.ANIMAL_FRIEND.get(), 3000, 3), 1f)
-            .effect(new MobEffectInstance(MobEffects.CONFUSION, 1500, 1), 1F)
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1200,3), 1f)
+            .effect(new MobEffectInstance(ModEffects.ATTRACT.get(), 1000, 0), 1f)
+            .effect(new MobEffectInstance(ModEffects.ANIMAL_FRIEND.get(), 1000, 0), 1f)
+            .effect(new MobEffectInstance(MobEffects.CONFUSION, 1200, 1), 1F)
             .build();
 
 
