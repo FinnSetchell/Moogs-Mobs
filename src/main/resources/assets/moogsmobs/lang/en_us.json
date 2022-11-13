@@ -24,9 +24,8 @@
   "block.moogsmobs.keg": "Dwarven Keg",
 
   //effects
-  "effect.moogsmobs.flight": "Flight",
   "effect.moogsmobs.freeze": "Frosty",
-  "effect.moogsmobs.phantom": "Well Rested",
+  "effect.moogsmobs.animal_friend": "Animal Whisperer",
   "effect.moogsmobs.attract": "Attraction",
-  "effect.moogsmobs.wither": "Wither Touch"
+  "effect.moogsmobs.invisible_mob_effect": "Punch of Invisibility"
 }

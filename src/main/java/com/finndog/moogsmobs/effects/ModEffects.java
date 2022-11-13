@@ -13,20 +13,17 @@ public class ModEffects {
     public static final DeferredRegister<MobEffect> EFFECTS =
             DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, MoogsMobs.MODID);
 
-    public static final RegistryObject<MobEffect> FLIGHT = EFFECTS.register("flight",
-            () -> new FlightEffect(MobEffectCategory.BENEFICIAL, rawColorFromRGB(199, 183, 255)));
-
     public static final RegistryObject<MobEffect> FREEZE = EFFECTS.register("freeze",
-            () -> new FreezeEffect(MobEffectCategory.BENEFICIAL, rawColorFromRGB(143, 181, 246)));
-
-    public static final RegistryObject<MobEffect> PHANTOM = EFFECTS.register("phantom",
-            () -> new PhantomEffect(MobEffectCategory.BENEFICIAL, rawColorFromRGB(58, 70, 123)));
+            () -> new FreezeEffect(MobEffectCategory.HARMFUL, rawColorFromRGB(143, 181, 246)));
 
     public static final RegistryObject<MobEffect> ATTRACT = EFFECTS.register("attract",
             () -> new AttractEffect(MobEffectCategory.BENEFICIAL, rawColorFromRGB(170, 14,1)));
 
-    public static final RegistryObject<MobEffect> WITHER = EFFECTS.register("wither",
-            () -> new WitherEffect(MobEffectCategory.BENEFICIAL, rawColorFromRGB(29, 5, 3)));
+        public static final RegistryObject<MobEffect> ANIMAL_FRIEND = EFFECTS.register("animal_friend",
+            () -> new AttractEffect(MobEffectCategory.BENEFICIAL, rawColorFromRGB(170, 14,1)));
+
+    public static final RegistryObject<MobEffect> INVISIBLE_MOB_EFFECT = EFFECTS.register("invisible_mob_effect",
+            () -> new InvisibleMobEffect(MobEffectCategory.NEUTRAL, rawColorFromRGB(29, 5, 3)));
 
     public static void register(IEventBus eventBus) {
         EFFECTS.register(eventBus);

@@ -1,22 +1,18 @@
 /** THANKS TO hadrus FOR THE MOD Alcocraft: Beer & Stuff FOR THIS EFFECTS. (uses MIT license)*/
 package com.finndog.moogsmobs.effects;
 
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 
-public class WitherEffect extends MobEffect {
+public class InvisibleMobEffect extends MobEffect {
 
-    protected WitherEffect(MobEffectCategory mobEffectCategory, int color) {
+    protected InvisibleMobEffect(MobEffectCategory mobEffectCategory, int color) {
         super(mobEffectCategory, color);
     }
 
@@ -27,7 +23,7 @@ public class WitherEffect extends MobEffect {
         for(Entity e : level.getEntities(pLivingEntity, new AABB(pLivingEntity.blockPosition()).inflate(50))){
             if (e instanceof LivingEntity entity) {
                 if (entity.getLastHurtByMob() == pLivingEntity) {
-                    entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 40, 10));
+                    entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 40, 10));
                 }
             }
         }
