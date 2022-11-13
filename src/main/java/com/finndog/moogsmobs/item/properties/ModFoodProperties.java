@@ -29,9 +29,8 @@ public class ModFoodProperties {
             .saturationMod(0.6f)
             .alwaysEat()
             .effect(() -> new MobEffectInstance(ModEffects.PHANTOM.get(), 3000,0), 1.0f)
-            .effect(new MobEffectInstance(ModEffects.ATTRACT.get(), 1000, 0), 1f)
-            .effect(new MobEffectInstance(MobEffects.BLINDNESS, 20, 0), 1.0F)
-            .effect(new MobEffectInstance(MobEffects.CONFUSION, 400, 0), 0.7F)
+            .effect(new MobEffectInstance(ModEffects.ATTRACT.get(), 3000, 0), 1f)
+            .effect(new MobEffectInstance(MobEffects.CONFUSION, 700, 0), 0.7F)
             .build();
 
 
