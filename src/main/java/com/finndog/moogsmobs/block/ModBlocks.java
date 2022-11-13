@@ -32,7 +32,7 @@ public class ModBlocks {
     // GENERAL NON BLOCKS
     public static RegistryObject<Block> JAR = registerBlock("jar_block", () -> new JarBlock(BlockBehaviour.Properties.of(Material.GLASS).strength(0.5f, 1f).sound(SoundType.GLASS)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> ANIMATED_JAR_BLOCK = registerBlockWithoutBlockItem("animated_glowbug_jar_block", () -> new AnimatedGlowBugJarBlock(BlockBehaviour.Properties.of(Material.GLASS).noOcclusion()));
-    public static RegistryObject<Block> FLUORESCENT_LANTERN = registerBlock("fluorescent_lantern", () -> new LanternBlock(BlockBehaviour.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3.5F).sound(SoundType.LANTERN).lightLevel((p_187433_) -> {return 10;})), CreativeModeTab.TAB_DECORATIONS);
+    public static RegistryObject<Block> FLUORESCENT_LANTERN = registerBlock("fluorescent_lantern", () -> new LanternBlock(BlockBehaviour.Properties.of(Material.METAL).strength(1.5F).sound(SoundType.LANTERN).lightLevel((p_187433_) -> {return 10;})), CreativeModeTab.TAB_DECORATIONS);
 
     // BOTTLES
     public static final RegistryObject<Block> EMPTY_BOTTLE_BLOCK = registerBlockWithoutBlockItem("empty_bottle_block", () -> new BottleBlock(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));
