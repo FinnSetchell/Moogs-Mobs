@@ -73,7 +73,7 @@ public class KegBlockEntity extends BlockEntity {
 
     @Override
     protected void saveAdditional(CompoundTag tag) {
-        tag.putInt("beer", aleLevel);
+        tag.putInt("aleLevel", aleLevel);
         tag.putInt("aleType", aleType);
 
         super.saveAdditional(tag);
@@ -82,7 +82,7 @@ public class KegBlockEntity extends BlockEntity {
     @Override
     public void load(CompoundTag tag) {
         super.load(tag);
-        aleLevel = tag.getInt("beer");
+        aleLevel = tag.getInt("aleLevel");
         aleType = tag.getInt("aleType");
     }
 
@@ -95,7 +95,7 @@ public class KegBlockEntity extends BlockEntity {
     }
 
 
-    private static boolean hasBeer(KegBlockEntity entity) {
+    private static boolean hasAle(KegBlockEntity entity) {
         if (entity.aleLevel != 0) {
             return true;
         } else

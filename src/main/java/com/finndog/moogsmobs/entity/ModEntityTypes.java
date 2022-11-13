@@ -50,7 +50,7 @@ public class ModEntityTypes {
     public static final RegistryObject<EntityType<DwarfMinerEntity>> DWARF_MINER =
             ENTITY_TYPES.register("dwarf_miner",
                     () -> EntityType.Builder.of(DwarfMinerEntity::new, MobCategory.CREATURE)
-                            .sized(0.8f, 1.3f)
+                            .sized(0.7f, 1.4f)
                             .build(new ResourceLocation(MoogsMobs.MODID, "dwarf_miner").toString()));
 
     public static final RegistryObject<EntityType<DeathCaplingEntity>> DEATH_CAPLING =

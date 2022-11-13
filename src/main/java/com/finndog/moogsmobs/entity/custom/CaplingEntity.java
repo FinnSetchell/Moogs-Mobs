@@ -187,7 +187,7 @@ public class CaplingEntity extends Monster implements IAnimatable {
         super.tick();
     }
 
-    public void setTarget(@javax.annotation.Nullable LivingEntity entity) {
+    public void setTarget(@Nullable LivingEntity entity) {
         if (!(entity instanceof Goat)) {
             super.setTarget(entity);
         }
