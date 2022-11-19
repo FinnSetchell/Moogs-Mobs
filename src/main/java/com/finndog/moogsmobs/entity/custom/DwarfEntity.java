@@ -20,8 +20,9 @@ public class DwarfEntity extends PathfinderMob {
 
     public static AttributeSupplier setAttributes() {
         return Monster.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 7.0D)
+                .add(Attributes.MAX_HEALTH, 24.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.2f)
+                .add(Attributes.ATTACK_DAMAGE, 3.0f)
                 .build();
     }
 }
