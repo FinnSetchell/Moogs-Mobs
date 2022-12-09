@@ -5,6 +5,7 @@ import com.finndog.moogsmobs.entity.variant.DwarfMinerVariant;
 import com.finndog.moogsmobs.item.ModItems;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.Util;
+import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -23,6 +24,7 @@ import net.minecraft.world.entity.ai.behavior.BehaviorUtils;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.util.LandRandomPos;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -162,6 +164,16 @@ public class DwarfMinerEntity extends DwarfEntity implements IAnimatable {
                 setCooldownCounter(getTradeCooldown());
             } else {
                 if (itemstack.is(ModItems.HONEYBREW.get()) || itemstack.is(ModItems.ALE.get()) || itemstack.is(ModItems.IRON_GROG.get())) {
+                    //hold itemstack in offhand
+                    if (getItemInHand(InteractionHand.OFF_HAND).isEmpty()) {
+                        setItemInHand(InteractionHand.OFF_HAND, itemstack);
+                        lookAt(this, 1f, 0.7f);
+                    }
+
+                    //look at ale for 3 secs
+                    //delete itemstack
+
+
                     incrementTradeCounter();
                     if (!pPlayer.isCreative()) {itemstack.shrink(1);}
                     throwItemsTowardRandomPos(this, getItemToThrow(this));
@@ -174,6 +186,44 @@ public class DwarfMinerEntity extends DwarfEntity implements IAnimatable {
 
         return InteractionResult.SUCCESS;
     }
+
+    @Override
+
+
+    public void lookAt(Entity p_21392_, float p_21393_, float p_21394_) {
+        super.lookAt(p_21392_, p_21393_, p_21394_);
+    }
+
+    public ItemStack getItemInHand(InteractionHand hand) {
+        if (hand == InteractionHand.MAIN_HAND) {
+            return this.getItemBySlot(EquipmentSlot.MAINHAND);
+        } else if (hand == InteractionHand.OFF_HAND) {
+            return this.getItemBySlot(EquipmentSlot.OFFHAND);
+        } else {
+            throw new IllegalArgumentException("Invalid hand " + hand);
+        }
+    }
+
+    public void setItemInHand(InteractionHand hand, ItemStack itemStack) {
+        if (hand == InteractionHand.MAIN_HAND) {
+            this.setItemSlot(EquipmentSlot.MAINHAND, itemStack);
+        } else {
+            if (hand != InteractionHand.OFF_HAND) {
+                throw new IllegalArgumentException("Invalid hand " + hand);
+            }
+
+            this.setItemSlot(EquipmentSlot.OFFHAND, itemStack);
+        }
+
+    }
+
+    public boolean canHoldItem(ItemStack itemStack) {
+        return super.canHoldItem(itemStack);
+    }
+
+
+
+
     private static void throwItemsTowardRandomPos(DwarfMinerEntity p_34913_, List<ItemStack> p_34914_) {
         throwItemsTowardPos(p_34913_, p_34914_, getRandomNearbyPos(p_34913_));
     }
