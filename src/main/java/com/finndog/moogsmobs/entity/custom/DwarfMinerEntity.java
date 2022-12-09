@@ -10,7 +10,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
@@ -20,13 +19,8 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.AttributeInstance;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.behavior.BehaviorUtils;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.ResetUniversalAngerTargetGoal;
 import net.minecraft.world.entity.ai.util.LandRandomPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -54,9 +48,6 @@ public class DwarfMinerEntity extends DwarfEntity implements IAnimatable {
 
     private AnimationFactory factory = new AnimationFactory(this);
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(DwarfMinerEntity.class, EntityDataSerializers.INT);
-    private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(5, 15);
-    private int remainingPersistentAngerTime;
-    private UUID persistentAngerTarget;
     public DwarfMinerEntity(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
         super(p_21683_, p_21684_);
     }
@@ -177,7 +168,7 @@ public class DwarfMinerEntity extends DwarfEntity implements IAnimatable {
                     this.playSound(SoundEvents.PILLAGER_CELEBRATE);
                 }
             }
-            this.playSound(SoundEvents.DONKEY_ANGRY);
+            this.playSound(SoundEvents.VILLAGER_NO);
             // ATTACK
         }
 
