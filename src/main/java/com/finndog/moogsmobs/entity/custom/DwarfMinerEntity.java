@@ -48,7 +48,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import java.util.*;
 import java.util.function.Predicate;
 
-public class DwarfMinerEntity extends DwarfEntity implements IAnimatable, NeutralMob {
+public class DwarfMinerEntity extends DwarfEntity implements IAnimatable {
 //    Dwarfs are grumpy so dont get in their way while they are mining or youll get a good smack with their high level pickaxes
 //    Dwarfs are grumpy so dont get in their way while they are mining or youll get a good smack with their high level pickaxes
 
@@ -68,7 +68,6 @@ public class DwarfMinerEntity extends DwarfEntity implements IAnimatable, Neutra
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(2, new DwarfAttackGoal(this, 1.0D, false));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, this::isAngryAt));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
@@ -106,7 +105,6 @@ public class DwarfMinerEntity extends DwarfEntity implements IAnimatable, Neutra
         this.tradeCounter = tag.getByte("tradeCounter");
         this.cooldownCounter = tag.getInt("cooldownCounter");
         this.DATA_TRADE_COOLDOWN = tag.getInt("DATA_TRADE_COOLDOWN");
-        this.readPersistentAngerSaveData(this.level, tag);
         this.entityData.set(DATA_ID_TYPE_VARIANT, tag.getInt("Variant"));
     }
 
@@ -116,7 +114,6 @@ public class DwarfMinerEntity extends DwarfEntity implements IAnimatable, Neutra
         tag.putByte("tradeCounter", this.tradeCounter);
         tag.putInt("cooldownCounter", this.cooldownCounter);
         tag.putInt("DATA_TRADE_COOLDOWN", this.DATA_TRADE_COOLDOWN);
-        this.addPersistentAngerSaveData(tag);
         tag.putInt("Variant", this.getTypeVariant());
     }
 
@@ -149,7 +146,7 @@ public class DwarfMinerEntity extends DwarfEntity implements IAnimatable, Neutra
         this.playSound(SoundEvents.ZOMBIE_VILLAGER_STEP, 0.15f, 1.0f);
     }
     protected SoundEvent getAmbientSound() {
-        return this.isAngry() ? SoundEvents.DONKEY_ANGRY : SoundEvents.PILLAGER_AMBIENT;
+        return SoundEvents.PILLAGER_AMBIENT;
     }
 
     public void setTarget(@Nullable LivingEntity p_34478_) {
