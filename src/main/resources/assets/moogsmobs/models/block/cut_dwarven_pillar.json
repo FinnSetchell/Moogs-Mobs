@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "moogsmobs:block/cut_dwarven_pillar"
+  }
+}

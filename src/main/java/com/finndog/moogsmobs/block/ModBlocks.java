@@ -10,10 +10,7 @@ import com.finndog.moogsmobs.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LanternBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -37,6 +34,19 @@ public class ModBlocks {
     public static final RegistryObject<Block> HONEYBREW = registerBlockWithoutBlockItem("honeybrew_block", () -> new HoneybrewBottleBlock(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));
     public static final RegistryObject<Block> KEG = registerBlock("keg", () -> new KegBlock(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()), CreativeModeTab.TAB_FOOD);
 
+    // GENERAL BLOCKS
+    public static final RegistryObject<Block> DWARVEN_PILLAR = registerBlock("dwarven_pillar",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> CUT_DWARVEN_PILLAR = registerBlock("cut_dwarven_pillar",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> DWARVEN_PILLAR_TOP = registerBlock("dwarven_pillar_top",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> CUT_DWARVEN_STONE = registerBlock("cut_dwarven_stone",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

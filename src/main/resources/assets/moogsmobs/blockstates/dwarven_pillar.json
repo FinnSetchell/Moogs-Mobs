@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "moogsmobs:block/dwarven_pillar" },
+    "facing=east": { "model": "moogsmobs:block/dwarven_pillar", "y": 90 },
+    "facing=south": { "model": "moogsmobs:block/dwarven_pillar", "y": 180 },
+    "facing=west": { "model": "moogsmobs:block/dwarven_pillar", "y": 270 }
+  }
+}
