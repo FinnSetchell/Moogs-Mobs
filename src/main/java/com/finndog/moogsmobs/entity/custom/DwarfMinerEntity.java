@@ -22,7 +22,9 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.behavior.BehaviorUtils;
 import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.ai.util.LandRandomPos;
+import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -31,6 +33,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -139,7 +142,7 @@ public class DwarfMinerEntity extends DwarfEntity implements IAnimatable {
         this.playSound(SoundEvents.ZOMBIE_VILLAGER_STEP, 0.15f, 1.0f);
     }
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.PILLAGER_AMBIENT;
+        return SoundEvents.VILLAGER_AMBIENT;
     }
 
     public void setTarget(@Nullable LivingEntity p_34478_) {
@@ -164,31 +167,32 @@ public class DwarfMinerEntity extends DwarfEntity implements IAnimatable {
                 setCooldownCounter(getTradeCooldown());
             } else {
                 if (itemstack.is(ModItems.HONEYBREW.get()) || itemstack.is(ModItems.ALE.get()) || itemstack.is(ModItems.IRON_GROG.get())) {
-                    //hold itemstack in offhand
+                    //  hold itemstack in offhand
                     if (getItemInHand(InteractionHand.OFF_HAND).isEmpty()) {
                         setItemInHand(InteractionHand.OFF_HAND, itemstack);
-                        lookAt(this, 1f, 0.7f);
+                        this.getBrain().setMemoryWithExpiry(MemoryModuleType.ADMIRING_ITEM, true, 120L);
+                        stopWalking(this); //look at ale for 2 secs
+                        setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY); //delete itemstack
                     }
-
-                    //look at ale for 3 secs
-                    //delete itemstack
-
 
                     incrementTradeCounter();
                     if (!pPlayer.isCreative()) {itemstack.shrink(1);}
                     throwItemsTowardRandomPos(this, getItemToThrow(this));
-                    this.playSound(SoundEvents.PILLAGER_CELEBRATE);
+                    this.playSound(SoundEvents.VILLAGER_CELEBRATE);
+
+                    return InteractionResult.SUCCESS;
                 }
             }
-            this.playSound(SoundEvents.VILLAGER_NO);
-            // ATTACK
         }
-
-        return InteractionResult.SUCCESS;
+        // ATTACK
+        this.playSound(SoundEvents.VILLAGER_NO);
+        return InteractionResult.PASS;
     }
 
-    @Override
-
+    private static void stopWalking(DwarfMinerEntity p_35007_) {
+        p_35007_.getBrain().eraseMemory(MemoryModuleType.WALK_TARGET);
+        p_35007_.getNavigation().stop();
+    }
 
     public void lookAt(Entity p_21392_, float p_21393_, float p_21394_) {
         super.lookAt(p_21392_, p_21393_, p_21394_);
@@ -206,27 +210,21 @@ public class DwarfMinerEntity extends DwarfEntity implements IAnimatable {
 
     public void setItemInHand(InteractionHand hand, ItemStack itemStack) {
         if (hand == InteractionHand.MAIN_HAND) {
-            this.setItemSlot(EquipmentSlot.MAINHAND, itemStack);
+            this.setItemSlotAndDropWhenKilled(EquipmentSlot.MAINHAND, itemStack);
         } else {
             if (hand != InteractionHand.OFF_HAND) {
                 throw new IllegalArgumentException("Invalid hand " + hand);
             }
 
-            this.setItemSlot(EquipmentSlot.OFFHAND, itemStack);
+            this.setItemSlotAndDropWhenKilled(EquipmentSlot.OFFHAND, itemStack);
         }
 
     }
 
-    public boolean canHoldItem(ItemStack itemStack) {
-        return super.canHoldItem(itemStack);
-    }
-
-
-
-
     private static void throwItemsTowardRandomPos(DwarfMinerEntity p_34913_, List<ItemStack> p_34914_) {
         throwItemsTowardPos(p_34913_, p_34914_, getRandomNearbyPos(p_34913_));
     }
+
     private static void throwItemsTowardPos(DwarfMinerEntity p_34864_, List<ItemStack> p_34865_, Vec3 p_34866_) {
         if (!p_34865_.isEmpty()) {
             p_34864_.swing(InteractionHand.OFF_HAND);
@@ -236,10 +234,12 @@ public class DwarfMinerEntity extends DwarfEntity implements IAnimatable {
             }
         }
     }
+
     private static Vec3 getRandomNearbyPos(DwarfMinerEntity p_35017_) {
         Vec3 vec3 = LandRandomPos.getPos(p_35017_, 4, 2);
         return vec3 == null ? p_35017_.position() : vec3;
     }
+
     private static List<ItemStack> getItemToThrow(DwarfMinerEntity pDwarvenMiner) {
         Random random = new Random();
         List<ItemStack> list = new ArrayList<>();
@@ -252,11 +252,9 @@ public class DwarfMinerEntity extends DwarfEntity implements IAnimatable {
 
 
 
-
-
-    /** GETTERS AND SETTERS */
-
-
+    public boolean canHoldItem(ItemStack itemStack) {
+        return super.canHoldItem(itemStack);
+    }
     public int getTradeCooldown() {return this.DATA_TRADE_COOLDOWN;}
     public byte getTradeCounter() {return this.tradeCounter;}
     public void incrementTradeCounter() {this.tradeCounter++;}
