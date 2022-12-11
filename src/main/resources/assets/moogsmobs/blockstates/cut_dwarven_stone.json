@@ -1,8 +1,5 @@
 {
   "variants": {
-    "facing=north": { "model": "moogsmobs:block/cut_dwarven_stone" },
-    "facing=east": { "model": "moogsmobs:block/cut_dwarven_stone", "y": 90 },
-    "facing=south": { "model": "moogsmobs:block/cut_dwarven_stone", "y": 180 },
-    "facing=west": { "model": "moogsmobs:block/cut_dwarven_stone", "y": 270 }
+    "": { "model": "moogsmobs:block/cut_dwarven_stone" }
   }
 }

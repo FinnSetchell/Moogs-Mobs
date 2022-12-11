@@ -23,9 +23,9 @@
   "block.moogsmobs.fluorescent_lantern": "Fluorescent Lantern",
   "block.moogsmobs.keg": "Dwarven Keg",
   "block.moogsmobs.dwarven_pillar": "Dwarven Pillar",
-  "block.moogsmobs.dwarven_pillar_top": "Dwarven Pillar Top",
   "block.moogsmobs.cut_dwarven_pillar": "Cut Dwarven Pillar",
   "block.moogsmobs.cut_dwarven_stone": "Cut Dwarven Stone",
+  "block.moogsmobs.gilded_polished_deepslate": "Gilded Polished Deepslate",
 
   //effects
   "effect.moogsmobs.freeze": "Frosty",
