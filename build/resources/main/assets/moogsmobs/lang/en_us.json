@@ -26,6 +26,10 @@
   "block.moogsmobs.cut_dwarven_pillar": "Cut Dwarven Pillar",
   "block.moogsmobs.cut_dwarven_stone": "Cut Dwarven Stone",
   "block.moogsmobs.gilded_polished_deepslate": "Gilded Polished Deepslate",
+  "block.moogsmobs.polished_copper_deepslate": "Polished Copper Deepslate",
+  "block.moogsmobs.polished_exposed_copper_deepslate": "Polished Exposed Copper Deepslate",
+  "block.moogsmobs.polished_oxidized_copper_deepslate": "Polished Oxidized Copper Deepslate",
+  "block.moogsmobs.polished_weathered_copper_deepslate": "Polished Weathered Copper Deepslate",
 
   //effects
   "effect.moogsmobs.freeze": "Frosty",

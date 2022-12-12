@@ -39,6 +39,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> CUT_DWARVEN_PILLAR = registerBlock("cut_dwarven_pillar", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> CUT_DWARVEN_STONE = registerBlock("cut_dwarven_stone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> GILDED_POLISHED_DEEPSLATE = registerBlock("gilded_polished_deepslate", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_COPPER_DEEPSLATE = registerBlock("polished_copper_deepslate", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_EXPOSED_COPPER_DEEPSLATE = registerBlock("polished_exposed_copper_deepslate", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_WEATHERED_COPPER_DEEPSLATE = registerBlock("polished_weathered_copper_deepslate", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_OXIDIZED_COPPER_DEEPSLATE = registerBlock("polished_oxidized_copper_deepslate", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
