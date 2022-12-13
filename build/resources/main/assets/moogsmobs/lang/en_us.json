@@ -3,7 +3,7 @@
   "item.moogsmobs.glowbug_spawn_egg": "Glow Bug Spawn Egg",
   "item.moogsmobs.capling_spawn_egg": "Capling Spawn Egg",
   "item.moogsmobs.death_capling_spawn_egg": "Death Capling Spawn Egg",
-  "item.moogsmobs.death_cap_spawn_egg": "Death Cap Spawn Egg",
+  "item.moogsmobs.death_cap_spawn_egg": "Deathcap Spawn Egg",
   "item.moogsmobs.dwarf_miner_spawn_egg": "Dwarf Miner Spawn Egg",
 
   //items
@@ -30,6 +30,20 @@
   "block.moogsmobs.polished_exposed_copper_deepslate": "Polished Exposed Copper Deepslate",
   "block.moogsmobs.polished_oxidized_copper_deepslate": "Polished Oxidized Copper Deepslate",
   "block.moogsmobs.polished_weathered_copper_deepslate": "Polished Weathered Copper Deepslate",
+  "block.moogsmobs.brass_polished_deepslate": "Brass polished Deepslate",
+  "block.moogsmobs.copper_deepslate_pillar": "Copper Deepslate Pillar",
+  "block.moogsmobs.exposed_copper_deepslate_pillar": "Exposed Copper Deepslate Pillar",
+  "block.moogsmobs.weathered_copper_deepslate_pillar": "Weathered Copper Deepslate Pillar",
+  "block.moogsmobs.oxidized_copper_deepslate_pillar": "Oxidized Copper Deepslate Pillar",
+  "block.moogsmobs.gilded_deepslate_pillar": "Gilded Deepslate Pillar",
+  "block.moogsmobs.runic_guilded_deepslate_pillar": "Runic Guilded Deepslate Pillar",
+  "block.moogsmobs.brass_deepslate_pillar": "Brass Deepslate Pillar",
+  "block.moogsmobs.copper_deepslate_tiles": "Copper Deepslate Pillar",
+  "block.moogsmobs.exposed_copper_deepslate_tiles": "Exposed Copper Deepslate Tiles",
+  "block.moogsmobs.weathered_copper_deepslate_tiles": "Weathered Copper Deepslate Tiles",
+  "block.moogsmobs.oxidized_copper_deepslate_tiles": "Oxidized Copper Deepslate Tiles",
+  "block.moogsmobs.gilded_deepslate_tiles": "Gilded Deepslate Tiles",
+  "block.moogsmobs.brass_deepslate_tiles": "Brass Deepslate Tile",
 
   //effects
   "effect.moogsmobs.freeze": "Frosty",
