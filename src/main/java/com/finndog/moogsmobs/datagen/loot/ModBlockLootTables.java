@@ -9,6 +9,13 @@ public class ModBlockLootTables extends BlockLoot {
 
     @Override
     protected void addTables() {
+        this.dropSelf(ModBlocks.FLUORESCENT_LANTERN.get());
+        this.dropSelf(ModBlocks.ALE.get());
+        this.dropSelf(ModBlocks.EMPTY_BOTTLE_BLOCK.get());
+        this.dropSelf(ModBlocks.HONEYBREW.get());
+        this.dropSelf(ModBlocks.IRON_GROG.get());
+        this.dropSelf(ModBlocks.KEG.get());
+
         this.dropSelf(ModBlocks.DWARVEN_PILLAR.get());
         this.dropSelf(ModBlocks.CUT_DWARVEN_PILLAR.get());
         this.dropSelf(ModBlocks.CUT_DWARVEN_STONE.get());
@@ -23,7 +30,7 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.WEATHERED_COPPER_DEEPSLATE_PILLAR.get());
         this.dropSelf(ModBlocks.OXIDIZED_COPPER_DEEPSLATE_PILLAR.get());
         this.dropSelf(ModBlocks.GILDED_DEEPSLATE_PILLAR.get());
-        this.dropSelf(ModBlocks.RUNIC_GUILDED_DEEPSLATE_PILLAR.get());
+        this.dropSelf(ModBlocks.RUNIC_GILDED_DEEPSLATE_PILLAR.get());
         this.dropSelf(ModBlocks.BRASS_DEEPSLATE_PILLAR.get());
         this.dropSelf(ModBlocks.COPPER_DEEPSLATE_TILES.get());
         this.dropSelf(ModBlocks.EXPOSED_COPPER_DEEPSLATE_TILES.get());
