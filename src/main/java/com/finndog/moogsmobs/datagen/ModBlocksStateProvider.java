@@ -26,8 +26,7 @@ public class ModBlocksStateProvider extends BlockStateProvider {
                 new ResourceLocation(MoogsMobs.MODID, "block/dwarven_pillar"));
         axisBlock((RotatedPillarBlock) ModBlocks.CUT_DWARVEN_PILLAR.get(), new ResourceLocation(MoogsMobs.MODID, "block/cut_dwarven_pillar"),
                 new ResourceLocation(MoogsMobs.MODID, "block/cut_dwarven_pillar"));
-        axisBlock((RotatedPillarBlock) ModBlocks.CUT_DWARVEN_STONE.get(), new ResourceLocation(MoogsMobs.MODID, "block/cut_dwarven_stone"),
-                new ResourceLocation(MoogsMobs.MODID, "block/cut_dwarven_stone"));
+        simpleBlockWithItem(ModBlocks.CUT_DWARVEN_STONE.get());
 
         axisBlock((RotatedPillarBlock) ModBlocks.POLISHED_COPPER_DEEPSLATE.get(), new ResourceLocation(MoogsMobs.MODID, "block/polished_copper_deepslate"),
                 new ResourceLocation(MoogsMobs.MODID, "block/polished_copper_deepslate"));
