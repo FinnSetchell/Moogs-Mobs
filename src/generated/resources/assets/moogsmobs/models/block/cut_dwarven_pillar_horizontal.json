@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "moogsmobs:block/cut_dwarven_stone",
+    "side": "moogsmobs:block/cut_dwarven_pillar"
+  }
+}

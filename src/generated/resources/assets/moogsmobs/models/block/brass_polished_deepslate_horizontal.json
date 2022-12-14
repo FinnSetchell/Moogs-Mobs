@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "minecraft:block/polished_deepslate",
+    "side": "moogsmobs:block/deepslate/brass_polished_deepslate"
+  }
+}

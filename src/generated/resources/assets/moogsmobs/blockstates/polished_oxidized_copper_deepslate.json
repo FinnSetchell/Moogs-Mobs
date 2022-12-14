@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "moogsmobs:block/polished_oxidized_copper_deepslate_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "moogsmobs:block/polished_oxidized_copper_deepslate"
+    },
+    "axis=z": {
+      "model": "moogsmobs:block/polished_oxidized_copper_deepslate_horizontal",
+      "x": 90
+    }
+  }
+}
