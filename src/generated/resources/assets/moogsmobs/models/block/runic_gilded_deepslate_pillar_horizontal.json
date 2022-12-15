@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "moogsmobs:block/deepslate/pillars/gilded_deepslate_pillar_top",
+    "side": "moogsmobs:block/deepslate/pillars/runic_gilded_deepslate_pillar_side"
+  }
+}

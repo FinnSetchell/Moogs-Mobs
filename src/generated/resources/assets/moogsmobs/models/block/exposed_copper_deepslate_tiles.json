@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "moogsmobs:block/exposed_copper_deepslate_tiles"
+  }
+}
