@@ -16,9 +16,6 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.IRON_GROG.get());
         this.dropSelf(ModBlocks.KEG.get());
 
-        this.dropSelf(ModBlocks.DWARVEN_PILLAR.get());
-        this.dropSelf(ModBlocks.CUT_DWARVEN_PILLAR.get());
-        this.dropSelf(ModBlocks.CUT_DWARVEN_STONE.get());
         this.dropSelf(ModBlocks.POLISHED_COPPER_DEEPSLATE.get());
         this.dropSelf(ModBlocks.POLISHED_EXPOSED_COPPER_DEEPSLATE.get());
         this.dropSelf(ModBlocks.POLISHED_WEATHERED_COPPER_DEEPSLATE.get());

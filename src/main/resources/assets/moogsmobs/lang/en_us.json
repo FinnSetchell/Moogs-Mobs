@@ -1,4 +1,6 @@
 {
+  "itemGroup.moogs_mobs_tab": "Moogs Mobs",
+
   //eggs
   "item.moogsmobs.glowbug_spawn_egg": "Glow Bug Spawn Egg",
   "item.moogsmobs.capling_spawn_egg": "Capling Spawn Egg",
@@ -22,9 +24,6 @@
   "item.moogsmobs.animated_glowbug_jar_block": "Glow Bug Terrarium",
   "block.moogsmobs.fluorescent_lantern": "Fluorescent Lantern",
   "block.moogsmobs.keg": "Dwarven Keg",
-  "block.moogsmobs.dwarven_pillar": "Dwarven Pillar",
-  "block.moogsmobs.cut_dwarven_pillar": "Cut Dwarven Pillar",
-  "block.moogsmobs.cut_dwarven_stone": "Cut Dwarven Stone",
   "block.moogsmobs.gilded_polished_deepslate": "Gilded Polished Deepslate",
   "block.moogsmobs.polished_copper_deepslate": "Polished Copper Deepslate",
   "block.moogsmobs.polished_exposed_copper_deepslate": "Polished Exposed Copper Deepslate",
