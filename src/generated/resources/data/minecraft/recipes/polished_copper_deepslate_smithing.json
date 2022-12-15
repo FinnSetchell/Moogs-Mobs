@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:copper_ingot"
+  },
+  "base": {
+    "item": "minecraft:polished_deepslate"
+  },
+  "result": {
+    "item": "moogsmobs:polished_copper_deepslate"
+  }
+}

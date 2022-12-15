@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:gold_ingot"
+  },
+  "base": {
+    "item": "minecraft:polished_deepslate"
+  },
+  "result": {
+    "item": "moogsmobs:gilded_polished_deepslate"
+  }
+}

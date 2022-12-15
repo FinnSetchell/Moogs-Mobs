@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "moogsmobs:brass_polished_deepslate"
+  },
+  "result": "moogsmobs:brass_deepslate_tiles"
+}

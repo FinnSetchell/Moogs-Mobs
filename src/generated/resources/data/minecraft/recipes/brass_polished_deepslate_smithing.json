@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "moogsmobs:brass_ingot"
+  },
+  "base": {
+    "item": "minecraft:polished_deepslate"
+  },
+  "result": {
+    "item": "moogsmobs:brass_polished_deepslate"
+  }
+}

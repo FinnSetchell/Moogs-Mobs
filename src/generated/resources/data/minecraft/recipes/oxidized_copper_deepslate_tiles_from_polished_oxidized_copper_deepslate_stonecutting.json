@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "moogsmobs:polished_oxidized_copper_deepslate"
+  },
+  "result": "moogsmobs:oxidized_copper_deepslate_tiles"
+}
