@@ -1,13 +1,10 @@
-// 1.19.2	2022-12-14T20:55:40.7681611	LootTables
+// 1.19.2	2022-12-15T17:56:02.8879683	LootTables
 88e37c9092bfac571c9fada0e7a658e8529ede26 data/moogsmobs/loot_tables/blocks/ale_block.json
 8d2f7ce6e89e70c18ed19c99533e2f934786a850 data/moogsmobs/loot_tables/blocks/brass_deepslate_pillar.json
 cd07def1a3f0e9b5c4404374dcbf9a1693a229f6 data/moogsmobs/loot_tables/blocks/brass_deepslate_tiles.json
 82744bb1c149544bcf2489d77b28be2d157d18c9 data/moogsmobs/loot_tables/blocks/brass_polished_deepslate.json
 0805168c1420f94484265c1792314b81ea3bfbd3 data/moogsmobs/loot_tables/blocks/copper_deepslate_pillar.json
 72e98811e6cbd5bdba5d556277de066887c5a374 data/moogsmobs/loot_tables/blocks/copper_deepslate_tiles.json
-a1b1de3068a2fd08f36cb841e0a9bda4035875b4 data/moogsmobs/loot_tables/blocks/cut_dwarven_pillar.json
-bb18efce7c4537e87f7a3a771221bfa46014e1e0 data/moogsmobs/loot_tables/blocks/cut_dwarven_stone.json
-67fff34546cdec5d4b8c53c0657270dcb9b6ee61 data/moogsmobs/loot_tables/blocks/dwarven_pillar.json
 c1de52540a035b603b306ae28f37e44172c4a079 data/moogsmobs/loot_tables/blocks/empty_bottle_block.json
 0eba74704b0e2f29529525cab62880921aecffcc data/moogsmobs/loot_tables/blocks/exposed_copper_deepslate_pillar.json
 900ea8f163edf4684ccc216ae77a5d0ab5e1e676 data/moogsmobs/loot_tables/blocks/exposed_copper_deepslate_tiles.json

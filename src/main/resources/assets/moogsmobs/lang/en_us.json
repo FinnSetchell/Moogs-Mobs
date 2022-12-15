@@ -9,13 +9,14 @@
   "item.moogsmobs.dwarf_miner_spawn_egg": "Dwarf Miner Spawn Egg",
 
   //items
-  "item.moogsmobs.bioluminescence": "Bioluminescence",
+  "item.moogsmobs.glow_gloop": "Glow Gloop",
   "item.moogsmobs.ale_bottle": "Ale",
   "item.moogsmobs.shroudbreaker_manual": "Shroudbreaker Manual",
   "item.moogsmobs.empty_bottle": "Empty Bottle",
   "item.moogsmobs.ale": "Bottle of Dwarven Ale",
   "item.moogsmobs.honeybrew": "Bottle of Honeybrew",
   "item.moogsmobs.iron_grog": "Bottle of Iron Grog",
+  "item.moogsmobs.brass_ingot": "Brass Ingot",
 
   //blocks
   "block.moogsmobs.jar": "Jar",

@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "moogsmobs:bioluminescence",
+          "name": "moogsmobs:glow_gloop",
           "functions": [
             {
               "function": "minecraft:set_count",

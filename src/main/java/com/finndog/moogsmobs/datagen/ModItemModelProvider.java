@@ -1,6 +1,7 @@
 package com.finndog.moogsmobs.datagen;
 
 import com.finndog.moogsmobs.MoogsMobs;
+import com.finndog.moogsmobs.item.ModItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -16,7 +17,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-
+        simpleItem(ModItems.BRASS_INGOT.get());
     }
 
     private ItemModelBuilder simpleItem(Item item) {

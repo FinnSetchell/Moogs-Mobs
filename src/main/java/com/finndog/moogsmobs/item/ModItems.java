@@ -24,8 +24,9 @@ public class ModItems {
     public static final RegistryObject<Item> DEATH_CAP_SPAWN_EGG = ITEMS.register("death_cap_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.DEATH_CAP, 0x477371, 0x1a1a1a, new Item.Properties().tab(ModCreativeModeTab.MOOGS_MOBS_TAB)));
 
     // ITEMS
-    public static final RegistryObject<Item> BIOLUMINESCENCE = ITEMS.register("bioluminescence", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOOGS_MOBS_TAB)));
+    public static final RegistryObject<Item> GLOW_GLOOP = ITEMS.register("glow_gloop", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOOGS_MOBS_TAB)));
     public static final RegistryObject<Item> SHROUDBREAKER_MANUAL = ITEMS.register("shroudbreaker_manual", () -> new Item(new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.MOOGS_MOBS_TAB)));
+    public static final RegistryObject<Item> BRASS_INGOT = ITEMS.register("brass_ingot", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOOGS_MOBS_TAB)));
 
     // DRINKS
     public static final RegistryObject<Item> EMPTY_BOTTLE = ITEMS.register("empty_bottle", () -> new AleBottleItem(ModBlocks.EMPTY_BOTTLE_BLOCK.get(),new Item.Properties().tab(ModCreativeModeTab.MOOGS_MOBS_TAB)));
