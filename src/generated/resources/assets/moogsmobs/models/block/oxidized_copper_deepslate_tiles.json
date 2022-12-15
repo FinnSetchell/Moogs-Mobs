@@ -1,6 +1,11 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "all": "moogsmobs:block/oxidized_copper_deepslate_tiles"
+    "down": "moogsmobs:block/tiled/oxidized_copper_deepslate_tiles",
+    "east": "moogsmobs:block/tiled/oxidized_copper_deepslate_tiles",
+    "north": "moogsmobs:block/tiled/oxidized_copper_deepslate_tiles_flipped",
+    "south": "moogsmobs:block/tiled/oxidized_copper_deepslate_tiles_flipped",
+    "up": "moogsmobs:block/tiled/oxidized_copper_deepslate_tiles",
+    "west": "moogsmobs:block/tiled/oxidized_copper_deepslate_tiles"
   }
 }

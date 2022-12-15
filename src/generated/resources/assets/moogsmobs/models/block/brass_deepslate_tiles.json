@@ -1,6 +1,11 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "all": "moogsmobs:block/brass_deepslate_tiles"
+    "down": "moogsmobs:block/tiled/brass_deepslate_tiles",
+    "east": "moogsmobs:block/tiled/brass_deepslate_tiles",
+    "north": "moogsmobs:block/tiled/brass_deepslate_tiles_flipped",
+    "south": "moogsmobs:block/tiled/brass_deepslate_tiles_flipped",
+    "up": "moogsmobs:block/tiled/brass_deepslate_tiles",
+    "west": "moogsmobs:block/tiled/brass_deepslate_tiles"
   }
 }

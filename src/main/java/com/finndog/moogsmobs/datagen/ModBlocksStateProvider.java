@@ -56,12 +56,27 @@ public class ModBlocksStateProvider extends BlockStateProvider {
         axisBlockWithItem((RotatedPillarBlock) ModBlocks.BRASS_DEEPSLATE_PILLAR.get(), new ResourceLocation(MoogsMobs.MODID, "block/deepslate/pillars/brass_deepslate_pillar_side"),
                 new ResourceLocation(MoogsMobs.MODID, "block/deepslate/pillars/brass_deepslate_pillar_top"));
 
-        simpleBlockWithItem(ModBlocks.COPPER_DEEPSLATE_TILES.get());
-        simpleBlockWithItem(ModBlocks.EXPOSED_COPPER_DEEPSLATE_TILES.get());
-        simpleBlockWithItem(ModBlocks.WEATHERED_COPPER_DEEPSLATE_TILES.get());
-        simpleBlockWithItem(ModBlocks.OXIDIZED_COPPER_DEEPSLATE_TILES.get());
-        simpleBlockWithItem(ModBlocks.GILDED_DEEPSLATE_TILES.get());
-        simpleBlockWithItem(ModBlocks.BRASS_DEEPSLATE_TILES.get());
+        tileBlockWithItem(ModBlocks.COPPER_DEEPSLATE_TILES.get());
+        tileBlockWithItem(ModBlocks.EXPOSED_COPPER_DEEPSLATE_TILES.get());
+        tileBlockWithItem(ModBlocks.WEATHERED_COPPER_DEEPSLATE_TILES.get());
+        tileBlockWithItem(ModBlocks.OXIDIZED_COPPER_DEEPSLATE_TILES.get());
+        tileBlockWithItem(ModBlocks.GILDED_DEEPSLATE_TILES.get());
+        tileBlockWithItem(ModBlocks.BRASS_DEEPSLATE_TILES.get());
+
+
+    }
+
+    private void tileBlockWithItem(Block block) {
+        String blockName = ForgeRegistries.BLOCKS.getKey(block).getPath();
+
+        simpleBlock(block, models().cube(blockName,
+                new ResourceLocation(MoogsMobs.MODID, "block/tiled/" + blockName),
+                new ResourceLocation(MoogsMobs.MODID, "block/tiled/" + blockName),
+                new ResourceLocation(MoogsMobs.MODID, "block/tiled/" + blockName + "_flipped"),
+                new ResourceLocation(MoogsMobs.MODID, "block/tiled/" + blockName + "_flipped"),
+                new ResourceLocation(MoogsMobs.MODID, "block/tiled/" + blockName),
+                new ResourceLocation(MoogsMobs.MODID, "block/tiled/" + blockName)));
+        itemModels().withExistingParent(blockName, new ResourceLocation(MoogsMobs.MODID, "block/" + blockName));
 
     }
 
