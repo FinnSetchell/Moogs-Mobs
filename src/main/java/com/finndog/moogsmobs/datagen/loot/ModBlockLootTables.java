@@ -20,12 +20,20 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.POLISHED_EXPOSED_COPPER_DEEPSLATE.get());
         this.dropSelf(ModBlocks.POLISHED_WEATHERED_COPPER_DEEPSLATE.get());
         this.dropSelf(ModBlocks.POLISHED_OXIDIZED_COPPER_DEEPSLATE.get());
+        this.dropSelf(ModBlocks.WAXED_POLISHED_COPPER_DEEPSLATE.get());
+        this.dropSelf(ModBlocks.WAXED_POLISHED_EXPOSED_COPPER_DEEPSLATE.get());
+        this.dropSelf(ModBlocks.WAXED_POLISHED_WEATHERED_COPPER_DEEPSLATE.get());
+        this.dropSelf(ModBlocks.WAXED_POLISHED_OXIDIZED_COPPER_DEEPSLATE.get());
         this.dropSelf(ModBlocks.GILDED_POLISHED_DEEPSLATE.get());
         this.dropSelf(ModBlocks.BRASS_POLISHED_DEEPSLATE.get());
         this.dropSelf(ModBlocks.COPPER_DEESPLATE_PILLAR.get());
         this.dropSelf(ModBlocks.EXPOSED_COPPER_DEEPSLATE_PILLAR.get());
         this.dropSelf(ModBlocks.WEATHERED_COPPER_DEEPSLATE_PILLAR.get());
         this.dropSelf(ModBlocks.OXIDIZED_COPPER_DEEPSLATE_PILLAR.get());
+        this.dropSelf(ModBlocks.WAXED_COPPER_DEESPLATE_PILLAR.get());
+        this.dropSelf(ModBlocks.WAXED_EXPOSED_COPPER_DEEPSLATE_PILLAR.get());
+        this.dropSelf(ModBlocks.WAXED_WEATHERED_COPPER_DEEPSLATE_PILLAR.get());
+        this.dropSelf(ModBlocks.WAXED_OXIDIZED_COPPER_DEEPSLATE_PILLAR.get());
         this.dropSelf(ModBlocks.GILDED_DEEPSLATE_PILLAR.get());
         this.dropSelf(ModBlocks.RUNIC_GILDED_DEEPSLATE_PILLAR.get());
         this.dropSelf(ModBlocks.BRASS_DEEPSLATE_PILLAR.get());
@@ -33,6 +41,10 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.EXPOSED_COPPER_DEEPSLATE_TILES.get());
         this.dropSelf(ModBlocks.WEATHERED_COPPER_DEEPSLATE_TILES.get());
         this.dropSelf(ModBlocks.OXIDIZED_COPPER_DEEPSLATE_TILES.get());
+        this.dropSelf(ModBlocks.WAXED_COPPER_DEEPSLATE_TILES.get());
+        this.dropSelf(ModBlocks.WAXED_EXPOSED_COPPER_DEEPSLATE_TILES.get());
+        this.dropSelf(ModBlocks.WAXED_WEATHERED_COPPER_DEEPSLATE_TILES.get());
+        this.dropSelf(ModBlocks.WAXED_OXIDIZED_COPPER_DEEPSLATE_TILES.get());
         this.dropSelf(ModBlocks.GILDED_DEEPSLATE_TILES.get());
         this.dropSelf(ModBlocks.BRASS_DEEPSLATE_TILES.get());
     }
