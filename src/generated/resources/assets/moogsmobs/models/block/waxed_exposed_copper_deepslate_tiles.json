@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "moogsmobs:block/tiled/exposed_copper_deepslate_tiles",
+    "east": "moogsmobs:block/tiled/exposed_copper_deepslate_tiles",
+    "north": "moogsmobs:block/tiled/exposed_copper_deepslate_tiles_flipped",
+    "south": "moogsmobs:block/tiled/exposed_copper_deepslate_tiles_flipped",
+    "up": "moogsmobs:block/tiled/exposed_copper_deepslate_tiles",
+    "west": "moogsmobs:block/tiled/exposed_copper_deepslate_tiles"
+  }
+}

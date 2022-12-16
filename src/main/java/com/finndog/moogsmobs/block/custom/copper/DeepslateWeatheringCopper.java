@@ -2,33 +2,34 @@ package com.finndog.moogsmobs.block.custom.copper;
 
 import com.finndog.moogsmobs.item.ModItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.common.ToolAction;
+import net.minecraftforge.common.ToolActions;
+import org.jetbrains.annotations.Nullable;
 
 public class DeepslateWeatheringCopper extends Block implements ModWeatheringCopper {
     private final ModWeatheringCopper.ModWeatherState ModWeatherState;
 
-    @Override
-    public InteractionResult use(BlockState blockState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult blockHitResult) {
-        if (!pLevel.isClientSide()) {
-            ItemStack itemStack = pPlayer.getItemInHand(pHand);
-
-            if (itemStack.is(ModItems.EMPTY_BOTTLE.get())) {
-
-            }
-        }
-
-        return InteractionResult.sidedSuccess(pLevel.isClientSide());
-    }
+//    @Nullable
+//    @Override
+//    public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
+//        return ToolActions.AXE_SCRAPE.equals(toolAction) ? strippedBlock.get() : null;
+//    }
 
     public DeepslateWeatheringCopper(ModWeatheringCopper.ModWeatherState p_154925_, BlockBehaviour.Properties p_154926_) {
         super(p_154926_);
