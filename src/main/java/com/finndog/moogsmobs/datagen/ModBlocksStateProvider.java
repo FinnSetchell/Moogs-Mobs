@@ -35,6 +35,15 @@ public class ModBlocksStateProvider extends BlockStateProvider {
         axisBlockWithItem((RotatedPillarBlock) ModBlocks.BRASS_POLISHED_DEEPSLATE.get(), new ResourceLocation(MoogsMobs.MODID, "block/deepslate/brass_polished_deepslate"),
                 new ResourceLocation("minecraft", "block/polished_deepslate"));
 
+        axisBlockWithItem((RotatedPillarBlock) ModBlocks.WAXED_POLISHED_COPPER_DEEPSLATE.get(), new ResourceLocation(MoogsMobs.MODID, "block/deepslate/polished_copper_deepslate"),
+                new ResourceLocation("minecraft", "block/polished_deepslate"));
+        axisBlockWithItem((RotatedPillarBlock) ModBlocks.WAXED_POLISHED_EXPOSED_COPPER_DEEPSLATE.get(), new ResourceLocation(MoogsMobs.MODID, "block/deepslate/polished_exposed_copper_deepslate"),
+                new ResourceLocation("minecraft", "block/polished_deepslate"));
+        axisBlockWithItem((RotatedPillarBlock) ModBlocks.WAXED_POLISHED_WEATHERED_COPPER_DEEPSLATE.get(), new ResourceLocation(MoogsMobs.MODID, "block/deepslate/polished_weathered_copper_deepslate"),
+                new ResourceLocation("minecraft", "block/polished_deepslate"));
+        axisBlockWithItem((RotatedPillarBlock) ModBlocks.WAXED_POLISHED_OXIDIZED_COPPER_DEEPSLATE.get(), new ResourceLocation(MoogsMobs.MODID, "block/deepslate/polished_oxidized_copper_deepslate"),
+                new ResourceLocation("minecraft", "block/polished_deepslate"));
+
         axisBlockWithItem((RotatedPillarBlock) ModBlocks.COPPER_DEESPLATE_PILLAR.get(), new ResourceLocation(MoogsMobs.MODID, "block/deepslate/pillars/copper_deepslate_pillar_side"),
                 new ResourceLocation(MoogsMobs.MODID, "block/deepslate/pillars/copper_deepslate_pillar_top"));
         axisBlockWithItem((RotatedPillarBlock) ModBlocks.EXPOSED_COPPER_DEEPSLATE_PILLAR.get(), new ResourceLocation(MoogsMobs.MODID, "block/deepslate/pillars/exposed_copper_deepslate_pillar_side"),
@@ -50,22 +59,6 @@ public class ModBlocksStateProvider extends BlockStateProvider {
         axisBlockWithItem((RotatedPillarBlock) ModBlocks.BRASS_DEEPSLATE_PILLAR.get(), new ResourceLocation(MoogsMobs.MODID, "block/deepslate/pillars/brass_deepslate_pillar_side"),
                 new ResourceLocation(MoogsMobs.MODID, "block/deepslate/pillars/brass_deepslate_pillar_top"));
 
-        tileBlockWithItem(ModBlocks.COPPER_DEEPSLATE_TILES.get());
-        tileBlockWithItem(ModBlocks.EXPOSED_COPPER_DEEPSLATE_TILES.get());
-        tileBlockWithItem(ModBlocks.WEATHERED_COPPER_DEEPSLATE_TILES.get());
-        tileBlockWithItem(ModBlocks.OXIDIZED_COPPER_DEEPSLATE_TILES.get());
-        tileBlockWithItem(ModBlocks.GILDED_DEEPSLATE_TILES.get());
-        tileBlockWithItem(ModBlocks.BRASS_DEEPSLATE_TILES.get());
-
-        axisBlockWithItem((RotatedPillarBlock) ModBlocks.WAXED_POLISHED_COPPER_DEEPSLATE.get(), new ResourceLocation(MoogsMobs.MODID, "block/deepslate/polished_copper_deepslate"),
-                new ResourceLocation("minecraft", "block/polished_deepslate"));
-        axisBlockWithItem((RotatedPillarBlock) ModBlocks.WAXED_POLISHED_EXPOSED_COPPER_DEEPSLATE.get(), new ResourceLocation(MoogsMobs.MODID, "block/deepslate/polished_exposed_copper_deepslate"),
-                new ResourceLocation("minecraft", "block/polished_deepslate"));
-        axisBlockWithItem((RotatedPillarBlock) ModBlocks.WAXED_POLISHED_WEATHERED_COPPER_DEEPSLATE.get(), new ResourceLocation(MoogsMobs.MODID, "block/deepslate/polished_weathered_copper_deepslate"),
-                new ResourceLocation("minecraft", "block/polished_deepslate"));
-        axisBlockWithItem((RotatedPillarBlock) ModBlocks.WAXED_POLISHED_OXIDIZED_COPPER_DEEPSLATE.get(), new ResourceLocation(MoogsMobs.MODID, "block/deepslate/polished_oxidized_copper_deepslate"),
-                new ResourceLocation("minecraft", "block/polished_deepslate"));
-
         axisBlockWithItem((RotatedPillarBlock) ModBlocks.WAXED_COPPER_DEESPLATE_PILLAR.get(), new ResourceLocation(MoogsMobs.MODID, "block/deepslate/pillars/copper_deepslate_pillar_side"),
                 new ResourceLocation(MoogsMobs.MODID, "block/deepslate/pillars/copper_deepslate_pillar_top"));
         axisBlockWithItem((RotatedPillarBlock) ModBlocks.WAXED_EXPOSED_COPPER_DEEPSLATE_PILLAR.get(), new ResourceLocation(MoogsMobs.MODID, "block/deepslate/pillars/exposed_copper_deepslate_pillar_side"),
@@ -75,10 +68,18 @@ public class ModBlocksStateProvider extends BlockStateProvider {
         axisBlockWithItem((RotatedPillarBlock) ModBlocks.WAXED_OXIDIZED_COPPER_DEEPSLATE_PILLAR.get(), new ResourceLocation(MoogsMobs.MODID, "block/deepslate/pillars/oxidized_copper_deepslate_pillar_side"),
                 new ResourceLocation(MoogsMobs.MODID, "block/deepslate/pillars/oxidized_copper_deepslate_pillar_top"));
 
+        tileBlockWithItem(ModBlocks.COPPER_DEEPSLATE_TILES.get());
+        tileBlockWithItem(ModBlocks.EXPOSED_COPPER_DEEPSLATE_TILES.get());
+        tileBlockWithItem(ModBlocks.WEATHERED_COPPER_DEEPSLATE_TILES.get());
+        tileBlockWithItem(ModBlocks.OXIDIZED_COPPER_DEEPSLATE_TILES.get());
+        tileBlockWithItem(ModBlocks.GILDED_DEEPSLATE_TILES.get());
+        tileBlockWithItem(ModBlocks.BRASS_DEEPSLATE_TILES.get());
+
         tileBlockWithItem(ModBlocks.WAXED_COPPER_DEEPSLATE_TILES.get(), "copper_deepslate_tiles");
         tileBlockWithItem(ModBlocks.WAXED_EXPOSED_COPPER_DEEPSLATE_TILES.get(), "exposed_copper_deepslate_tiles");
         tileBlockWithItem(ModBlocks.WAXED_WEATHERED_COPPER_DEEPSLATE_TILES.get(), "weathered_copper_deepslate_tiles");
         tileBlockWithItem(ModBlocks.WAXED_OXIDIZED_COPPER_DEEPSLATE_TILES.get(), "oxidized_copper_deepslate_tiles");
+
 
 
 

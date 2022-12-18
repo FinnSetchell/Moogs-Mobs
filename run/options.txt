@@ -14,7 +14,7 @@ reducedDebugInfo:false
 showSubtitles:false
 directionalAudio:false
 touchscreen:false
-fullscreen:false
+fullscreen:true
 bobView:true
 toggleCrouch:false
 toggleSprint:false
@@ -115,7 +115,7 @@ soundCategory_master:0.26471698
 soundCategory_music:0.0
 soundCategory_record:1.0
 soundCategory_weather:1.0
-soundCategory_block:0.30633804
+soundCategory_block:0.70482504
 soundCategory_hostile:1.0
 soundCategory_neutral:1.0
 soundCategory_player:1.0
