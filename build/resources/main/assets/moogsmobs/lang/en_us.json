@@ -45,6 +45,19 @@
   "block.moogsmobs.gilded_deepslate_tiles": "Gilded Deepslate Tiles",
   "block.moogsmobs.brass_deepslate_tiles": "Brass Deepslate Tile",
 
+  "block.moogsmobs.waxed_polished_copper_deepslate": "Waxed Polished Copper Deepslate",
+  "block.moogsmobs.waxed_polished_exposed_copper_deepslate": "Waxed Polished Exposed Copper Deepslate",
+  "block.moogsmobs.waxed_polished_oxidized_copper_deepslate": "Waxed Polished Oxidized Copper Deepslate",
+  "block.moogsmobs.waxed_polished_weathered_copper_deepslate": "Waxed Polished Weathered Copper Deepslate",
+  "block.moogsmobs.waxed_copper_deepslate_pillar": "Waxed Copper Deepslate Pillar",
+  "block.moogsmobs.waxed_exposed_copper_deepslate_pillar": "Waxed Exposed Copper Deepslate Pillar",
+  "block.moogsmobs.waxed_weathered_copper_deepslate_pillar": "Waxed Weathered Copper Deepslate Pillar",
+  "block.moogsmobs.waxed_oxidized_copper_deepslate_pillar": "Waxed Oxidized Copper Deepslate Pillar",
+  "block.moogsmobs.waxed_copper_deepslate_tiles": "Waxed Copper Deepslate Tiles",
+  "block.moogsmobs.waxed_exposed_copper_deepslate_tiles": "Waxed Exposed Copper Deepslate Tiles",
+  "block.moogsmobs.waxed_weathered_copper_deepslate_tiles": "Waxed Weathered Copper Deepslate Tiles",
+  "block.moogsmobs.waxed_oxidized_copper_deepslate_tiles": "Waxed Oxidized Copper Deepslate Tiles",
+
   //effects
   "effect.moogsmobs.freeze": "Frosty",
   "effect.moogsmobs.animal_friend": "Animal Whisperer",

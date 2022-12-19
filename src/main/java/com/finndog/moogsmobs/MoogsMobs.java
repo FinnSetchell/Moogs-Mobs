@@ -1,6 +1,7 @@
 package com.finndog.moogsmobs;
 
 import com.finndog.moogsmobs.block.ModBlocks;
+import com.finndog.moogsmobs.block.custom.copper.DeepslateCopper;
 import com.finndog.moogsmobs.block.entity.BlockEntities;
 import com.finndog.moogsmobs.effects.ModEffects;
 import com.finndog.moogsmobs.entity.ModEntityTypes;
@@ -36,7 +37,7 @@ import software.bernie.geckolib3.GeckoLib;
 public class MoogsMobs
 {
     public static final String MODID = "moogsmobs";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public MoogsMobs()
     {
@@ -47,6 +48,8 @@ public class MoogsMobs
         BlockEntities.register(eventBus);
         ModEntityTypes.register(eventBus);
         ModEffects.register(eventBus);
+
+        DeepslateCopper.inject();
 
         GeckoLib.initialize();
 

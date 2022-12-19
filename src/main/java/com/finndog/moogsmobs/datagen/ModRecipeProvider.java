@@ -5,9 +5,11 @@ import com.finndog.moogsmobs.item.ModItems;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SmithingTableBlock;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -46,6 +48,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(pFinishedRecipeConsumer, ModBlocks.OXIDIZED_COPPER_DEEPSLATE_TILES.get(), ModBlocks.POLISHED_OXIDIZED_COPPER_DEEPSLATE.get());
         stonecutterResultFromBase(pFinishedRecipeConsumer, ModBlocks.GILDED_DEEPSLATE_TILES.get(), ModBlocks.GILDED_POLISHED_DEEPSLATE.get());
         stonecutterResultFromBase(pFinishedRecipeConsumer, ModBlocks.BRASS_DEEPSLATE_TILES.get(), ModBlocks.BRASS_POLISHED_DEEPSLATE.get());
+
+        // ADD ALL COPPER VARIANTS WITH HONEY COMB | SHAPELESS
 
     }
 
