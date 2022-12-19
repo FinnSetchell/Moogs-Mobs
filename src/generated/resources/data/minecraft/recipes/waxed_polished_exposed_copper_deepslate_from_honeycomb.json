@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "waxed_polished_exposed_copper_deepslate",
+  "ingredients": [
+    {
+      "item": "moogsmobs:polished_exposed_copper_deepslate"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "item": "moogsmobs:waxed_polished_exposed_copper_deepslate"
+  }
+}

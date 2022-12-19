@@ -20,7 +20,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 public class RotatedPillarDeepslateWeatheringCopper extends RotatedPillarBlock implements ModWeatheringCopper {
-    public static final Supplier<Map<Block, Block>> WAXABLES = Suppliers.memoize(() -> {
+    public static final Supplier<BiMap<Block, Block>> WAXABLES = Suppliers.memoize(() -> {
         return ImmutableBiMap.<Block, Block>builder().put(ModBlocks.WAXED_POLISHED_COPPER_DEEPSLATE.get(), ModBlocks.POLISHED_COPPER_DEEPSLATE.get()).put(ModBlocks.WAXED_POLISHED_EXPOSED_COPPER_DEEPSLATE.get(), ModBlocks.POLISHED_EXPOSED_COPPER_DEEPSLATE.get()).put(ModBlocks.WAXED_POLISHED_WEATHERED_COPPER_DEEPSLATE.get(), ModBlocks.POLISHED_WEATHERED_COPPER_DEEPSLATE.get()).put(ModBlocks.WAXED_POLISHED_OXIDIZED_COPPER_DEEPSLATE.get(), ModBlocks.POLISHED_OXIDIZED_COPPER_DEEPSLATE.get()).put(ModBlocks.WAXED_COPPER_DEESPLATE_PILLAR.get(), ModBlocks.COPPER_DEESPLATE_PILLAR.get()).put(ModBlocks.WAXED_EXPOSED_COPPER_DEEPSLATE_PILLAR.get(), ModBlocks.EXPOSED_COPPER_DEEPSLATE_PILLAR.get()).put(ModBlocks.WAXED_WEATHERED_COPPER_DEEPSLATE_PILLAR.get(), ModBlocks.WEATHERED_COPPER_DEEPSLATE_PILLAR.get()).put(ModBlocks.WAXED_OXIDIZED_COPPER_DEEPSLATE_PILLAR.get(), ModBlocks.OXIDIZED_COPPER_DEEPSLATE_PILLAR.get()).build();
     });
     public static final Supplier<BiMap<Block, Block>> SCRAPE = Suppliers.memoize(() -> {

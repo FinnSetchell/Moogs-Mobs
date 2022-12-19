@@ -29,11 +29,11 @@ public class DeepslateCopper {
     private static boolean waxableMemoized;
 
     public static void inject() {
-//        if (injected) {
-//            throw new IllegalStateException("Cannot inject DeepslateCopper twice!");
-//        }
-//        injected = true;
-//
+        if (injected) {
+            throw new IllegalStateException("Cannot inject DeepslateCopper twice!");
+        }
+        injected = true;
+
 //        Supplier<BiMap<Block, Block>> originalWaxableMapSupplier = HoneycombItem.WAXABLES;
 //        Supplier<BiMap<Block, Block>> waxableMapSupplier = Suppliers.memoize(() -> {
 //            waxableMemoized = true;
@@ -44,7 +44,6 @@ public class DeepslateCopper {
 //            });
 //            return builder.build();
 //        });
-//
 //        HoneycombItem.WAXABLES = waxableMapSupplier;
     }
 }

@@ -1,11 +1,15 @@
 package com.finndog.moogsmobs.datagen;
 
 import com.finndog.moogsmobs.block.ModBlocks;
+import com.finndog.moogsmobs.block.custom.copper.DeepslateCopper;
+import com.finndog.moogsmobs.block.custom.copper.DeepslateWeatheringCopper;
+import com.finndog.moogsmobs.block.custom.copper.RotatedPillarDeepslateWeatheringCopper;
 import com.finndog.moogsmobs.item.ModItems;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.HoneycombItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -50,7 +54,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(pFinishedRecipeConsumer, ModBlocks.BRASS_DEEPSLATE_TILES.get(), ModBlocks.BRASS_POLISHED_DEEPSLATE.get());
 
         // ADD ALL COPPER VARIANTS WITH HONEY COMB | SHAPELESS
-
+        DeepslateWeatheringCopper.WAXABLES.get().inverse().forEach((p_176578_, p_176579_) -> {
+            ShapelessRecipeBuilder.shapeless(p_176579_).requires(p_176578_).requires(Items.HONEYCOMB).group(getItemName(p_176579_)).unlockedBy(getHasName(p_176578_), has(p_176578_)).save(pFinishedRecipeConsumer, getConversionRecipeName(p_176579_, Items.HONEYCOMB));
+        });
+        RotatedPillarDeepslateWeatheringCopper.WAXABLES.get().inverse().forEach((p_176578_, p_176579_) -> {
+            ShapelessRecipeBuilder.shapeless(p_176579_).requires(p_176578_).requires(Items.HONEYCOMB).group(getItemName(p_176579_)).unlockedBy(getHasName(p_176578_), has(p_176578_)).save(pFinishedRecipeConsumer, getConversionRecipeName(p_176579_, Items.HONEYCOMB));
+        });
     }
 
     private UpgradeRecipeBuilder smithingRecipe(Item item1, Item item2, Item result) {

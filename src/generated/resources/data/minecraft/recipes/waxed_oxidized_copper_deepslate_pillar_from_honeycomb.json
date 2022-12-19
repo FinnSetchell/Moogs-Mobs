@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "waxed_oxidized_copper_deepslate_pillar",
+  "ingredients": [
+    {
+      "item": "moogsmobs:oxidized_copper_deepslate_pillar"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "item": "moogsmobs:waxed_oxidized_copper_deepslate_pillar"
+  }
+}
