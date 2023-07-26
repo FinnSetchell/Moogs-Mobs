@@ -2,6 +2,7 @@ package com.finndog.moogsmobs.block;
 
 import com.finndog.moogsmobs.MoogsMobs;
 import com.finndog.moogsmobs.block.custom.copper.DeepslateWeatheringCopper;
+import com.finndog.moogsmobs.block.custom.FluoLanternBlock;
 import com.finndog.moogsmobs.block.custom.KegBlock;
 import com.finndog.moogsmobs.block.custom.copper.ModWeatheringCopper;
 import com.finndog.moogsmobs.block.custom.copper.RotatedPillarDeepslateWeatheringCopper;
@@ -30,7 +31,7 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, MoogsMobs.MODID);
 
     // GENERAL NON BLOCKS
-    public static RegistryObject<Block> FLUORESCENT_LANTERN = registerBlock("fluorescent_lantern", () -> new LanternBlock(BlockBehaviour.Properties.of(Material.METAL).strength(1.5F).sound(SoundType.LANTERN).lightLevel((p_187433_) -> {return 10;})), ModCreativeModeTab.MOOGS_MOBS_TAB);
+    public static RegistryObject<Block> FLUORESCENT_LANTERN = registerBlock("fluorescent_lantern", () -> new FluoLanternBlock(BlockBehaviour.Properties.of(Material.METAL).strength(1.5F).sound(SoundType.LANTERN).lightLevel((p_187433_) -> {return 10;})), ModCreativeModeTab.MOOGS_MOBS_TAB);
 
     // BOTTLES
     public static final RegistryObject<Block> EMPTY_BOTTLE_BLOCK = registerBlockWithoutBlockItem("empty_bottle_block", () -> new BottleBlock(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));

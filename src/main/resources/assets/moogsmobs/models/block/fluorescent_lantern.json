@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+  "render_type": "cutout",
 	"textures": {
 		"0": "moogsmobs:block/fluorescent_lantern",
 		"particle": "moogsmobs:block/fluorescent_lantern"

@@ -1,14 +1,13 @@
 {
   "variants": {
-    "hanging=false": {
-      "model": "moogsmobs:block/fluorescent_lantern"
-    },
-    "hanging=true": {
-      "model": "moogsmobs:block/fluorescent_lantern_hanging"
-    },
-    "facing=north": { "model": "moogsmobs:block/ale_block" },
-    "facing=east": { "model": "moogsmobs:block/ale_block", "y": 90 },
-    "facing=south": { "model": "moogsmobs:block/ale_block", "y": 180 },
-    "facing=west": { "model": "moogsmobs:block/ale_block", "y": 270 }
+    "facing=north,hanging=false": { "model": "moogsmobs:block/fluorescent_lantern" },
+    "facing=east,hanging=false": { "model": "moogsmobs:block/fluorescent_lantern", "y": 90 },
+    "facing=south,hanging=false": { "model": "moogsmobs:block/fluorescent_lantern", "y": 180 },
+    "facing=west,hanging=false": { "model": "moogsmobs:block/fluorescent_lantern", "y": 270 },
+
+    "facing=north,hanging=true": { "model": "moogsmobs:block/fluorescent_lantern_hanging" },
+    "facing=east,hanging=true": { "model": "moogsmobs:block/fluorescent_lantern_hanging", "y": 90 },
+    "facing=south,hanging=true": { "model": "moogsmobs:block/fluorescent_lantern_hanging", "y": 180 },
+    "facing=west,hanging=true": { "model": "moogsmobs:block/fluorescent_lantern_hanging", "y": 270 }
   }
 }
