@@ -46,7 +46,7 @@ This is a mod which adds a bunch of magic inspired mobs and creatures. Everythin
 
 Curseforge: https://www.curseforge.com/minecraft/mc-mods/moogs-mobs
 GitHub: https://github.com/FinnSetchell/Moogs-Mobs
-Discord: https://discord.com/invite/6VCTUawBz6
+Discord: https://moogsmods.com/discord?r=ingame-mobs
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.moogsmobs]] #optional
